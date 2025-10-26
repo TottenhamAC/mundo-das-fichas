@@ -396,13 +396,15 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* Footer - MELHORIAS PARA FIXAR NO FINAL */
+        /* Footer - CORRIGIDO PARA NÃO SOBREPOR CONTEÚDO */
         .footer {
             background: var(--bg-tertiary);
             border-top: 1px solid rgba(255, 255, 255, 0.1);
             padding: 3rem 0 2rem;
             margin-top: auto;
             width: 100%;
+            position: relative;
+            z-index: 10;
         }
 
         [data-theme="light"] .footer {
@@ -604,7 +606,7 @@
             text-align: center;
         }
 
-        /* Contact Info - Reorganizado conforme solicitado */
+        /* Contact Info - REORGANIZADO E MELHORADO */
         .contact-info {
             display: grid;
             grid-template-columns: 1fr;
@@ -1199,6 +1201,39 @@
         [data-theme="light"] .file-upload-label:hover {
             background: rgba(0, 0, 0, 0.1);
             border-color: rgba(0, 0, 0, 0.3);
+        }
+
+        /* Botão Voltar ao Topo - NOVA MELHORIA */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--accent-primary);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 1.5rem;
+            box-shadow: var(--shadow-lg);
+            transition: var(--transition);
+            z-index: 1000;
+            opacity: 0;
+            transform: translateY(20px);
+            cursor: pointer;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .back-to-top:hover {
+            background: var(--accent-secondary);
+            transform: translateY(-5px);
         }
 
         /* Responsive - MELHORIAS MOBILE */
@@ -2145,7 +2180,8 @@
     <header class="header" id="header">
         <div class="container">
             <div class="nav-container">
-                <a href="/" class="logo" onclick="showMainSite()">
+                <!-- LOGO CORRIGIDA - href atualizado -->
+                <a href="/mundo-das-fichas/" class="logo" onclick="showMainSite()">
                     <img src="ef.png" alt="eFootball Community Brasil" class="logo-image">
                     <div class="logo-title">eFootball Community Brasil</div>
                 </a>
@@ -2351,7 +2387,7 @@
             </section>
         </div>
 
-        <!-- Community Tab -->
+        <!-- Community Tab - CORRIGIDA -->
         <div id="community" class="tab-content" style="display: none;">
             <main class="container" style="padding: 2rem 0;">
                 <div class="section-header">
@@ -2487,7 +2523,7 @@
         </div>
     </div>
 
-    <!-- Footer - MELHORADO PARA FIXAR NO FINAL -->
+    <!-- Footer - CORRIGIDO PARA NÃO SOBREPOR CONTEÚDO -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
@@ -2532,9 +2568,12 @@
         </div>
     </footer>
 
+    <!-- Botão Voltar ao Topo - NOVA MELHORIA -->
+    <button id="backToTop" class="back-to-top" onclick="scrollToTop()">↑</button>
+
     <!-- Landing Pages -->
     
-    <!-- Contact Landing Page - REORGANIZADO -->
+    <!-- Contact Landing Page - REORGANIZADO E MELHORADO -->
     <div id="contactPage" class="landing-page">
         <div class="container">
             <div class="landing-header">
@@ -2568,6 +2607,7 @@
                     <p>Para agilizar o atendimento, verifique se sua dúvida já não foi respondida em nossos <a href="#" onclick="showLandingPage('terms')" style="color: var(--accent-primary);">Termos de Uso</a> ou <a href="#" onclick="showLandingPage('privacy')" style="color: var(--accent-primary);">Política de Privacidade</a>.</p>
                 </div>
                 
+                <!-- SEÇÃO DE CRÉDITOS - REMOVIDA A SEÇÃO "LEGAL" -->
                 <div class="credits-section">
                     <div class="credit-logo">
                         <img src="konami.png" alt="KONAMI">
@@ -2582,923 +2622,6 @@
                 <div class="back-button">
                     <button class="btn btn-secondary" onclick="showMainSite()">← Voltar ao Site</button>
                 </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Terms of Use Landing Page -->
-    <div id="termsPage" class="landing-page">
-        <div class="container">
-            <div class="landing-header">
-                <h1>Termos de Uso</h1>
-                <p>Leia atentamente nossos termos e condições</p>
-            </div>
-            
-            <div class="landing-content">
-                <div class="card">
-                    <h2>Termos e Condições de Uso</h2>
-                    <p><strong>Última atualização:</strong> 1 de Janeiro de 2025</p>
-                    
-                    <h3>1. Aceitação dos Termos</h3>
-                    <p>Ao acessar e utilizar o site eFootball Community Brasil, você concorda em cumprir e estar vinculado a estes Termos de Uso. Estes termos regem nossa relação com você em relação a este site. Se você não concordar com qualquer parte destes termos, não poderá acessar o site.</p>
-                    
-                    <h3>2. Licença de Uso</h3>
-                    <p>Concedemos a você uma licença limitada, não exclusiva e intransferível para acessar e usar o site para fins pessoais e não comerciais. Esta licença não inclui:</p>
-                    <ul>
-                        <li>Revenda ou uso comercial do site ou de seu conteúdo</li>
-                        <li>Coleta e uso de listagens de produtos ou descrições</li>
-                        <li>Uso não autorizado de dados mining, robôs ou ferramentas de extração de dados</li>
-                        <li>Reprodução, duplicação, cópia, venda ou exploração do site</li>
-                    </ul>
-                    
-                    <h3>3. Propriedade Intelectual</h3>
-                    <p>Todo o conteúdo do site, incluindo textos, gráficos, logos, imagens, vídeos e software, é propriedade da eFootball Community Brasil ou de seus licenciadores e está protegido por leis de direitos autorais internacionais.</p>
-                    <p>Este site é uma comunidade de fãs independente e não é afiliado, endossado ou patrocinado pela <strong>KONAMI Digital Entertainment Co., Ltd.</strong>, desenvolvedora e distribuidora oficial do jogo <strong>eFootball™</strong>.</p>
-                    
-                    <h3>4. Conteúdo de Terceiros</h3>
-                    <p>As fichas técnicas e informações de jogadores são obtidas através do site <strong>eFootballHub.net</strong>, que é uma fonte independente de informações sobre o jogo eFootball. Reconhecemos e agradecemos ao eFootballHub pelo valioso conteúdo que disponibiliza para a comunidade.</p>
-                    <p>Todo o conteúdo relacionado a jogadores, times e ligas é de propriedade de seus respectivos detentores de direitos. Este site utiliza essas informações sob a doutrina de uso justo (fair use) para fins educacionais e informativos.</p>
-                    
-                    <h3>5. Conduta do Usuário</h3>
-                    <p>Você concorda em não utilizar o site para:</p>
-                    <ul>
-                        <li>Violar qualquer lei local ou internacional aplicável</li>
-                        <li>Infringir direitos de propriedade intelectual</li>
-                        <li>Enviar conteúdo difamatório, obsceno, ofensivo ou prejudicial</li>
-                        <li>Transmitir malware ou código malicioso</li>
-                        <li>Coletar informações de outros usuários sem consentimento</li>
-                        <li>Interferir na segurança ou funcionamento do site</li>
-                    </ul>
-                    
-                    <h3>6. Contas de Usuário</h3>
-                    <p>Ao criar uma conta em nosso site, você é responsável por:</p>
-                    <ul>
-                        <li>Manter a confidencialidade de sua senha</li>
-                        <li>Toda atividade que ocorrer em sua conta</li>
-                        <li>Fornecer informações precisas e atualizadas</li>
-                        <li>Notificar-nos imediatamente sobre qualquer uso não autorizado</li>
-                    </ul>
-                    
-                    <h3>7. Marketplace e Transações</h3>
-                    <p>O eFootball Community Brasil atua apenas como plataforma para conectar compradores e vendedores. Não nos responsabilizamos por:</p>
-                    <ul>
-                        <li>Qualquer transação realizada entre usuários</li>
-                        <li>A veracidade das informações nos anúncios</li>
-                        <li>Problemas relacionados a pagamentos ou entrega de serviços</li>
-                        <li>Contas bloqueadas ou suspensas pela KONAMI</li>
-                    </ul>
-                    <p>Recomendamos que todas as transações sejam realizadas com cautela e que sejam verificadas as reputações dos vendedores.</p>
-                    
-                    <h3>8. Moderação de Conteúdo</h3>
-                    <p>Reservamo-nos o direito de:</p>
-                    <ul>
-                        <li>Remover qualquer conteúdo que viole estes termos</li>
-                        <li>Suspender ou encerrar contas de usuários infratores</li>
-                        <li>Moderar discussões e interações na comunidade</li>
-                        <li>Tomar medidas legais quando necessário</li>
-                    </ul>
-                    
-                    <h3>9. Limitação de Responsabilidade</h3>
-                    <p>O eFootball Community Brasil não será responsável por quaisquer danos diretos, indiretos, incidentais, consequenciais ou punitivos resultantes do uso ou incapacidade de usar nosso site.</p>
-                    
-                    <h3>10. Alterações nos Termos</h3>
-                    <p>Reservamo-nos o direito de modificar estes termos a qualquer momento. As alterações entrarão em vigor imediatamente após sua publicação no site. O uso continuado do site após tais alterações constitui sua aceitação dos novos termos.</p>
-                    
-                    <h3>11. Lei Aplicável</h3>
-                    <p>Estes termos serão regidos e interpretados de acordo com as leis do Brasil, sem considerar seus conflitos de disposições legais.</p>
-                    
-                    <h3>12. Disposições Gerais</h3>
-                    <p>Se qualquer disposição destes termos for considerada inválida ou inexequível, as demais disposições permanecerão em pleno vigor e efeito. Nossa falha em exercer ou fazer valer qualquer direito ou disposição destes Termos não constituirá uma renúncia a tal direito ou disposição.</p>
-                </div>
-                
-                <div class="credits-section">
-                    <div class="credit-logo">
-                        <img src="konami.png" alt="KONAMI">
-                        <div>KONAMI Digital Entertainment Co., Ltd.</div>
-                    </div>
-                    <div class="credit-logo">
-                        <img src="efootballhub.png" alt="eFootballHub">
-                        <div>eFootballHub.net</div>
-                    </div>
-                </div>
-                
-                <div class="back-button">
-                    <button class="btn btn-secondary" onclick="showMainSite()">← Voltar ao Site</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Privacy Policy Landing Page -->
-    <div id="privacyPage" class="landing-page">
-        <div class="container">
-            <div class="landing-header">
-                <h1>Política de Privacidade</h1>
-                <p>Como protegemos e usamos suas informações</p>
-            </div>
-            
-            <div class="landing-content">
-                <div class="card">
-                    <h2>Política de Privacidade</h2>
-                    <p><strong>Última atualização:</strong> 1 de Janeiro de 2025</p>
-                    
-                    <h3>1. Introdução</h3>
-                    <p>Esta Política de Privacidade descreve como a eFootball Community Brasil coleta, usa, armazena e protege suas informações pessoais quando você utiliza nosso site. Estamos comprometidos em proteger sua privacidade e garantir que suas informações pessoais sejam tratadas com segurança e em conformidade com a legislação aplicável.</p>
-                    
-                    <h3>2. Informações que Coletamos</h3>
-                    <p>Coletamos os seguintes tipos de informações:</p>
-                    <ul>
-                        <li><strong>Informações de Cadastro:</strong> Nome, endereço de e-mail, senha e data de registro</li>
-                        <li><strong>Informações de Perfil:</strong> Foto de perfil, biografia e preferências de jogo</li>
-                        <li><strong>Informações de Uso:</strong> Páginas visitadas, tempo de permanência e interações</li>
-                        <li><strong>Informações Técnicas:</strong> Endereço IP, tipo de navegador e dispositivo</li>
-                        <li><strong>Conteúdo Gerado:</strong> Posts, comentários e mensagens enviadas</li>
-                    </ul>
-                    
-                    <h3>3. Como Usamos Suas Informações</h3>
-                    <p>Utilizamos suas informações para os seguintes propósitos:</p>
-                    <ul>
-                        <li><strong>Prestação de Serviços:</strong> Criar e gerenciar sua conta, fornecer suporte</li>
-                        <li><strong>Personalização:</strong> Personalizar sua experiência no site</li>
-                        <li><strong>Comunicação:</strong> Enviar notificações importantes e atualizações</li>
-                        <li><strong>Melhoria do Site:</strong> Analisar uso para melhorar nossos serviços</li>
-                        <li><strong>Segurança:</strong> Prevenir fraudes e atividades maliciosa</li>
-                        <li><strong>Conformidade Legal:</strong> Cumprir obrigações legais e regulatórias</li>
-                    </ul>
-                    
-                    <h3>4. Base Legal para o Tratamento</h3>
-                    <p>Nosso tratamento de dados é baseado nas seguintes bases legais:</p>
-                    <ul>
-                        <li><strong>Consentimento:</strong> Quando você nos fornece consentimento explícito</li>
-                        <li><strong>Contrato:</strong> Para executar nossos termos de serviço</li>
-                        <li><strong>Interesse Legítimo:</strong> Para operar e melhorar nossos serviços</li>
-                        <li><strong>Obrigação Legal:</strong> Para cumprir requisitos legais</li>
-                    </ul>
-                    
-                    <h3>5. Compartilhamento de Informações</h3>
-                    <p>Podemos compartilhar suas informações nas seguintes situações:</p>
-                    <ul>
-                        <li><strong>Prestadores de Serviço:</strong> Com empresas que nos auxiliam na operação do site</li>
-                        <li><strong>Requisitos Legais:</strong> Quando exigido por lei ou processo legal</li>
-                        <li><strong>Proteção de Direitos:</strong> Para proteger nossos direitos, propriedade ou segurança</li>
-                        <li><strong>Fusões e Aquisições:</strong> Em caso de transação corporativa</li>
-                    </ul>
-                    <p>Este site utiliza informações do <strong>eFootballHub.net</strong> para fornecer fichas técnicas de jogadores, mas não compartilhamos dados de usuários com essa plataforma.</p>
-                    
-                    <h3>6. Retenção de Dados</h3>
-                    <p>Manteremos suas informações pessoais apenas pelo tempo necessário para cumprir os propósitos para os quais foram coletadas, incluindo para fins de satisfação de quaisquer requisitos legais, contábeis ou de relatórios.</p>
-                    
-                    <h3>7. Seus Direitos</h3>
-                    <p>De acordo com a LGPD, você tem os seguintes direitos:</p>
-                    <ul>
-                        <li><strong>Acesso:</strong> Solicitar cópia de suas informações pessoais</li>
-                        <li><strong>Retificação:</strong> Corrigir informações imprecisas ou incompletas</li>
-                        <li><strong>Eliminação:</strong> Solicitar a exclusão de suas informações</li>
-                        <li><strong>Portabilidade:</strong> Receber seus dados em formato estruturado</li>
-                        <li><strong>Revogação:</strong> Retirar consentimento a qualquer momento</li>
-                        <li><strong>Oposição:</strong> Opor-se ao processamento de seus dados</li>
-                    </ul>
-                    
-                    <h3>8. Cookies e Tecnologias Similares</h3>
-                    <p>Utilizamos cookies e tecnologias similares para:</p>
-                    <ul>
-                        <li>Lembrar suas preferências e configurações</li>
-                        <li>Analisar como você usa nosso site</li>
-                        <li>Personalizar conteúdo e anúncios</li>
-                        <li>Fornecer recursos de mídia social</li>
-                    </ul>
-                    <p>Você pode controlar o uso de cookies através das configurações do seu navegador.</p>
-                    
-                    <h3>9. Segurança de Dados</h3>
-                    <p>Implementamos medidas de segurança técnicas e organizacionais apropriadas para proteger suas informações pessoais contra acesso não autorizado, alteração, divulgação ou destruição. Estas medidas incluem:</p>
-                    <ul>
-                        <li>Criptografia de dados sensíveis</li>
-                        <li>Controles de acesso baseados em função</li>
-                        <li>Monitoramento regular de segurança</li>
-                        <li>Backups regulares dos dados</li>
-                    </ul>
-                    
-                    <h3>10. Transferência Internacional de Dados</h3>
-                    <p>Suas informações podem ser transferidas e processadas em países fora do Brasil. Garantimos que tais transferências estejam em conformidade com a legislação de proteção de dados aplicável.</p>
-                    
-                    <h3>11. Privacidade de Crianças</h3>
-                    <p>Nosso site não é direcionado a crianças menores de 13 anos. Não coletamos intencionalmente informações pessoais de crianças. Se tomarmos conhecimento de que coletamos informações de uma criança sem verificação do consentimento parental, tomaremos medidas para remover essas informações.</p>
-                    
-                    <h3>12. Alterações nesta Política</h3>
-                    <p>Podemos atualizar esta Política de Privacidade periodicamente para refletir mudanças em nossas práticas ou por outros motivos operacionais, legais ou regulatórios. Notificaremos você sobre quaisquer alterações materiais publicando a nova política nesta página.</p>
-                    
-                    <h3>13. Contato</h3>
-                    <p>Se você tiver alguma dúvida sobre esta Política de Privacidade ou sobre como tratamos suas informações pessoais, entre em contato conosco através da página de <a href="#" onclick="showLandingPage('contact')" style="color: var(--accent-primary);">Contato</a>.</p>
-                </div>
-                
-                <div class="credits-section">
-                    <div class="credit-logo">
-                        <img src="konami.png" alt="KONAMI">
-                        <div>KONAMI Digital Entertainment Co., Ltd.</div>
-                    </div>
-                    <div class="credit-logo">
-                        <img src="efootballhub.png" alt="eFootballHub">
-                        <div>eFootballHub.net</div>
-                    </div>
-                </div>
-                
-                <div class="back-button">
-                    <button class="btn btn-secondary" onclick="showMainSite()">← Voltar ao Site</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Login Modal -->
-    <div id="loginModal" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2 class="modal-title">🔐 Login</h2>
-                <button class="modal-close" onclick="hideModal('loginModal')">✕</button>
-            </div>
-            
-            <form id="loginForm" onsubmit="login(event)" class="login-form">
-                <div class="form-group">
-                    <label class="form-label">E-mail</label>
-                    <input type="email" id="loginEmail" class="form-input" required>
-                </div>
-                
-                <div class="form-group">
-                    <label class="form-label">Senha</label>
-                    <input type="password" id="loginPassword" class="form-input" required>
-                </div>
-                
-                <div style="display: flex; gap: 1rem; margin-top: 1.5rem;">
-                    <button type="submit" class="btn btn-primary" style="flex: 1;">Entrar</button>
-                    <button type="button" class="btn btn-secondary" onclick="hideModal('loginModal')">Cancelar</button>
-                </div>
-            </form>
-            
-            <div style="text-align: center; margin-top: 1.5rem;">
-                <p style="color: var(--text-secondary);">Não tem uma conta? <a href="#" onclick="hideModal('loginModal'); showRegisterModal();" style="color: var(--accent-primary);">Registre-se</a></p>
-            </div>
-        </div>
-    </div>
-
-    <!-- Register Modal -->
-    <div id="registerModal" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2 class="modal-title">👤 Criar Conta</h2>
-                <button class="modal-close" onclick="hideModal('registerModal')">✕</button>
-            </div>
-            
-            <form id="registerForm" onsubmit="register(event)" class="login-form">
-                <div class="form-group">
-                    <label class="form-label">Nome Completo</label>
-                    <input type="text" id="registerName" class="form-input" required>
-                </div>
-                
-                <div class="form-group">
-                    <label class="form-label">E-mail</label>
-                    <input type="email" id="registerEmail" class="form-input" required>
-                </div>
-                
-                <div class="form-group">
-                    <label class="form-label">Senha</label>
-                    <input type="password" id="registerPassword" class="form-input" required minlength="6">
-                </div>
-                
-                <div class="form-group">
-                    <label class="form-label">Confirmar Senha</label>
-                    <input type="password" id="registerConfirmPassword" class="form-input" required minlength="6">
-                </div>
-                
-                <div style="display: flex; gap: 1rem; margin-top: 1.5rem;">
-                    <button type="submit" class="btn btn-primary" style="flex: 1;">Criar Conta</button>
-                    <button type="button" class="btn btn-secondary" onclick="hideModal('registerModal')">Cancelar</button>
-                </div>
-            </form>
-            
-            <div style="text-align: center; margin-top: 1.5rem;">
-                <p style="color: var(--text-secondary);">Já tem uma conta? <a href="#" onclick="hideModal('registerModal'); showLoginModal();" style="color: var(--accent-primary);">Fazer Login</a></p>
-            </div>
-        </div>
-    </div>
-
-    <!-- Profile Modal -->
-    <div id="profileModal" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2 class="modal-title">👤 Meu Perfil</h2>
-                <button class="modal-close" onclick="hideModal('profileModal')">✕</button>
-            </div>
-            
-            <div class="profile-section">
-                <div class="profile-header">
-                    <div>
-                        <img id="profileAvatar" src="https://via.placeholder.com/120x120?text=Avatar" alt="Avatar" class="profile-avatar">
-                    </div>
-                    <div class="profile-info">
-                        <div class="profile-name" id="profileName">Nome do Usuário</div>
-                        <div class="profile-email" id="profileEmail">email@exemplo.com</div>
-                        <div id="profileRole" class="role-badge role-user">Usuário</div>
-                    </div>
-                </div>
-                
-                <div class="card">
-                    <h3>Alterar Avatar</h3>
-                    <div class="avatar-upload">
-                        <div class="form-group">
-                            <label class="form-label">URL da Imagem, GIF ou Vídeo</label>
-                            <input type="url" id="avatarUrl" class="form-input" placeholder="https://exemplo.com/avatar.jpg">
-                        </div>
-                        
-                        <div class="form-group">
-                            <label class="form-label">Ou faça upload de arquivo</label>
-                            <div class="file-upload">
-                                <input type="file" id="avatarUpload" class="file-upload-input" accept="image/*,video/*" data-max-size="100">
-                                <label for="avatarUpload" class="file-upload-label">
-                                    <span>📁 Escolher arquivo</span>
-                                </label>
-                            </div>
-                            <small style="color: var(--text-muted); display: block; margin-top: 0.5rem;">
-                                Formatos suportados: JPG, PNG, GIF, MP4, WebM (máx. 100MB)
-                            </small>
-                        </div>
-                        
-                        <button class="btn btn-primary" onclick="updateAvatar()">Atualizar Avatar</button>
-                    </div>
-                    
-                    <div style="margin-top: 1.5rem;">
-                        <h4>Prévia do Avatar</h4>
-                        <div id="avatarPreview" style="margin-top: 1rem; text-align: center;">
-                            <img id="previewImage" src="https://via.placeholder.com/120x120?text=Avatar" alt="Prévia" style="max-width: 120px; border-radius: 50%;">
-                            <video id="previewVideo" controls style="max-width: 120px; border-radius: 50%; display: none;"></video>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="card" style="margin-top: 1.5rem;">
-                    <h3>Informações da Conta</h3>
-                    <div class="form-group">
-                        <label class="form-label">Nome Completo</label>
-                        <input type="text" id="profileFullName" class="form-input">
-                    </div>
-                    <button class="btn btn-primary" onclick="updateProfile()">Atualizar Perfil</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Settings Modal - COM CARGO EXPLÍCITO -->
-    <div id="settingsModal" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2 class="modal-title">⚙️ Configurações</h2>
-                <button class="modal-close" onclick="hideModal('settingsModal')">✕</button>
-            </div>
-            
-            <div class="settings-section">
-                <!-- Exibição do Cargo do Usuário -->
-                <div class="user-role-display">
-                    <h3>Seu Cargo no Site</h3>
-                    <div id="userRoleDisplay" class="role-badge role-user">Usuário</div>
-                    <p style="margin-top: 0.5rem; color: var(--text-secondary); font-size: 0.875rem;">
-                        Este é seu nível de acesso atual no eFootball Community Brasil
-                    </p>
-                </div>
-                
-                <div class="settings-grid">
-                    <div class="card">
-                        <h3>🌓 Aparência</h3>
-                        <div class="setting-group">
-                            <div class="form-group">
-                                <label class="form-label">Tema</label>
-                                <select id="themeSelect" class="form-select" onchange="changeTheme(this.value)">
-                                    <option value="dark">Escuro</option>
-                                    <option value="light">Claro</option>
-                                    <option value="auto">Automático (Sistema)</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="card">
-                        <h3>🔔 Notificações</h3>
-                        <div class="setting-group">
-                            <div class="form-group">
-                                <label class="form-label" style="display: flex; align-items: center; gap: 0.5rem;">
-                                    <input type="checkbox" id="notifyNews" checked>
-                                    Notificações de Notícias
-                                </label>
-                            </div>
-                            <div class="form-group">
-                                <label class="form-label" style="display: flex; align-items: center; gap: 0.5rem;">
-                                    <input type="checkbox" id="notifyUpdates" checked>
-                                    Notificações de Atualizações
-                                </label>
-                            </div>
-                            <div class="form-group">
-                                <label class="form-label" style="display: flex; align-items: center; gap: 0.5rem;">
-                                    <input type="checkbox" id="notifyCourses" checked>
-                                    Notificações de Cursos
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="card">
-                        <h3>🔒 Privacidade</h3>
-                        <div class="setting-group">
-                            <div class="form-group">
-                                <label class="form-label" style="display: flex; align-items: center; gap: 0.5rem;">
-                                    <input type="checkbox" id="profilePublic" checked>
-                                    Perfil Público
-                                </label>
-                            </div>
-                            <div class="form-group">
-                                <label class="form-label" style="display: flex; align-items: center; gap: 0.5rem;">
-                                    <input type="checkbox" id="showEmail" checked>
-                                    Exibir E-mail Publicamente
-                                </label>
-                            </div>
-                            <div class="form-group">
-                                <label class="form-label" style="display: flex; align-items: center; gap: 0.5rem;">
-                                    <input type="checkbox" id="showActivity" checked>
-                                    Exibir Atividade Recente
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="card">
-                        <h3>💬 Comunicação</h3>
-                        <div class="setting-group">
-                            <div class="form-group">
-                                <label class="form-label" style="display: flex; align-items: center; gap: 0.5rem;">
-                                    <input type="checkbox" id="emailNewsletter" checked>
-                                    Receber Newsletter
-                                </label>
-                            </div>
-                            <div class="form-group">
-                                <label class="form-label" style="display: flex; align-items: center; gap: 0.5rem;">
-                                    <input type="checkbox" id="emailPromotions" checked>
-                                    Receber Promoções
-                                </label>
-                            </div>
-                            <div class="form-group">
-                                <label class="form-label" style="display: flex; align-items: center; gap: 0.5rem;">
-                                    <input type="checkbox" id="pushNotifications" checked>
-                                    Notificações Push
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Zona de Perigo - Excluir Conta -->
-                <div class="danger-zone">
-                    <h3>⚠️ Zona de Perigo</h3>
-                    <p style="color: var(--text-secondary); margin-bottom: 1rem;">
-                        Esta ação não pode ser desfeita. Isso excluirá permanentemente sua conta e removerá todos os seus dados de nossos servidores.
-                    </p>
-                    <button class="btn btn-danger" onclick="deleteAccount()">
-                        🗑️ Excluir Minha Conta
-                    </button>
-                </div>
-                
-                <div style="margin-top: 2rem; text-align: center;">
-                    <button class="btn btn-primary" onclick="saveSettings()">Salvar Configurações</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Create Post Modal -->
-    <div id="createPostModal" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2 class="modal-title">📝 Criar Post</h2>
-                <button class="modal-close" onclick="hideModal('createPostModal')">✕</button>
-            </div>
-            
-            <form id="createPostForm" onsubmit="createPost(event)">
-                <div class="form-group">
-                    <label class="form-label">Título</label>
-                    <input type="text" id="postTitle" class="form-input" placeholder="Dê um título para seu post..." required>
-                </div>
-                
-                <div class="form-group">
-                    <label class="form-label">Conteúdo</label>
-                    <textarea id="postContent" class="form-textarea" placeholder="Compartilhe suas ideias, perguntas ou experiências com a comunidade..." required rows="6"></textarea>
-                </div>
-                
-                <div class="form-group">
-                    <label class="form-label">Tags (separadas por vírgula)</label>
-                    <input type="text" id="postTags" class="form-input" placeholder="discussão, ajuda, formação, etc.">
-                </div>
-                
-                <div class="form-group">
-                    <label class="form-label">Imagem/Vídeo (URL)</label>
-                    <input type="url" id="postMedia" class="form-input" placeholder="https://exemplo.com/imagem.jpg">
-                </div>
-                
-                <div class="form-group">
-                    <label class="form-label">Tipo de Post</label>
-                    <select id="postType" class="form-select">
-                        <option value="discussion">Discussão</option>
-                        <option value="help">Pedido de Ajuda</option>
-                        <option value="showcase">Destaque</option>
-                        <option value="event">Evento</option>
-                        <option value="question">Pergunta</option>
-                    </select>
-                </div>
-                
-                <div style="display: flex; gap: 1rem; margin-top: 1.5rem;">
-                    <button type="submit" class="btn btn-primary" style="flex: 1;">Publicar</button>
-                    <button type="button" class="btn btn-secondary" onclick="hideModal('createPostModal')">Cancelar</button>
-                </div>
-            </form>
-        </div>
-    </div>
-
-    <!-- Post Detail Modal -->
-    <div id="postDetailModal" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2 class="modal-title" id="postDetailTitle">Detalhes do Post</h2>
-                <button class="modal-close" onclick="hideModal('postDetailModal')">✕</button>
-            </div>
-            
-            <div id="postDetailContent">
-                <!-- Conteúdo será carregado dinamicamente -->
-            </div>
-        </div>
-    </div>
-
-    <!-- Admin Panel Modal - MELHORADO -->
-    <div id="adminPanel" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2 class="modal-title">👑 Painel Administrativo</h2>
-                <button class="modal-close" onclick="hideModal('adminPanel')">✕</button>
-            </div>
-            
-            <div class="admin-dashboard">
-                <div class="admin-stat-card">
-                    <div class="admin-stat-value" id="adminTotalUsers">0</div>
-                    <div class="admin-stat-label">Total de Usuários</div>
-                </div>
-                <div class="admin-stat-card">
-                    <div class="admin-stat-value" id="adminTotalAdmins">0</div>
-                    <div class="admin-stat-label">Administradores</div>
-                </div>
-                <div class="admin-stat-card">
-                    <div class="admin-stat-value" id="adminTotalContent">0</div>
-                    <div class="admin-stat-label">Conteúdos</div>
-                </div>
-                <div class="admin-stat-card">
-                    <div class="admin-stat-value" id="adminTotalPosts">0</div>
-                    <div class="admin-stat-label">Posts</div>
-                </div>
-            </div>
-            
-            <!-- Mensagem de boas-vindas para novos administradores -->
-            <div id="welcomeAdminMessage" class="welcome-admin" style="display: none;">
-                <h3>🎉 Bem-vindo(a) à Equipe de Administração!</h3>
-                <p>Parabéns! Você agora faz parte da equipe de administradores do eFootball Community Brasil. Como administrador, você tem acesso a ferramentas especiais para gerenciar o conteúdo e a comunidade.</p>
-                <button class="btn btn-primary" onclick="hideWelcomeMessage()">Entendi</button>
-            </div>
-            
-            <div class="tabs">
-                <button class="tab active" onclick="switchAdminTab('content')">Gerenciar Conteúdo</button>
-                <button class="tab" onclick="switchAdminTab('users')">Gerenciar Usuários</button>
-                <button class="tab" onclick="switchAdminTab('moderation')">Moderação</button>
-                <button class="tab" onclick="switchAdminTab('settings')">Configurações</button>
-                <button class="tab" onclick="switchAdminTab('stats')">Estatísticas</button>
-            </div>
-            
-            <div id="adminContent" class="tab-content active">
-                <h3>Conteúdo Publicado</h3>
-                <div id="adminContentList" style="margin-top: 1rem;">
-                    <p style="text-align: center; color: var(--text-secondary); padding: 2rem;">
-                        Nenhum conteúdo publicado ainda
-                    </p>
-                </div>
-            </div>
-            
-            <div id="adminUsers" class="tab-content">
-                <h3>Usuários Registrados</h3>
-                <div id="adminUsersList" style="margin-top: 1rem;">
-                    <p style="text-align: center; color: var(--text-secondary); padding: 2rem;">
-                        Carregando lista de usuários...
-                    </p>
-                </div>
-            </div>
-            
-            <div id="adminModeration" class="tab-content">
-                <h3>Conteúdo Pendente de Moderação</h3>
-                <div id="adminModerationList" style="margin-top: 1rem;">
-                    <p style="text-align: center; color: var(--text-secondary); padding: 2rem;">
-                        Nenhum conteúdo pendente de moderação
-                    </p>
-                </div>
-            </div>
-            
-            <div id="adminSettings" class="tab-content">
-                <h3>Configurações do Site</h3>
-                <div class="card" style="margin-top: 1rem;">
-                    <h4>Informações de Contato</h4>
-                    <form id="contactSettingsForm" onsubmit="saveContactSettings(event)">
-                        <div class="form-group">
-                            <label class="form-label">E-mail de Contato</label>
-                            <input type="email" id="adminContactEmail" class="form-input" placeholder="seu-email@gmail.com">
-                        </div>
-                        <div class="form-group">
-                            <label class="form-label">Telefone/WhatsApp</label>
-                            <input type="text" id="adminContactPhone" class="form-input" placeholder="+55 (11) 98765-4321">
-                        </div>
-                        <button type="submit" class="btn btn-primary">Salvar Configurações</button>
-                    </form>
-                </div>
-                
-                <div class="card" style="margin-top: 1.5rem;">
-                    <h4>Configurações de Conteúdo</h4>
-                    <form id="contentSettingsForm" onsubmit="saveContentSettings(event)">
-                        <div class="form-group">
-                            <label class="form-label">Moderação de Conteúdo</label>
-                            <select id="contentModeration" class="form-select">
-                                <option value="auto">Aprovação Automática</option>
-                                <option value="manual">Aprovação Manual</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label class="form-label">Limite de Posts por Usuário</label>
-                            <input type="number" id="contentLimit" class="form-input" min="1" max="100" value="10">
-                        </div>
-                        <button type="submit" class="btn btn-primary">Salvar Configurações</button>
-                    </form>
-                </div>
-            </div>
-            
-            <div id="adminStats" class="tab-content">
-                <h3>Estatísticas do Site</h3>
-                <div class="stats-grid">
-                    <div class="stat-card">
-                        <div class="stat-value" id="statsNews">0</div>
-                        <div class="stat-label">Notícias</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-value" id="statsUpdates">0</div>
-                        <div class="stat-label">Novidades</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-value" id="statsCourses">0</div>
-                        <div class="stat-label">Cursos</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-value" id="statsMarketplace">0</div>
-                        <div class="stat-label">Anúncios</div>
-                    </div>
-                </div>
-                <div class="stats-grid" style="margin-top: 1.5rem; grid-template-columns: 1fr 1fr;">
-                    <div class="stat-card">
-                        <div class="stat-value" id="statsUsers">0</div>
-                        <div class="stat-label">Usuários Registrados</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-value" id="statsTotal">0</div>
-                        <div class="stat-label">Total de Conteúdos</div>
-                    </div>
-                </div>
-                
-                <div class="card" style="margin-top: 2rem;">
-                    <h4>Atividade Recente</h4>
-                    <div id="adminActivity" style="margin-top: 1rem;">
-                        <p style="text-align: center; color: var(--text-secondary); padding: 1rem;">
-                            Nenhuma atividade recente
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Admin List Modal -->
-    <div id="adminListModal" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2 class="modal-title">📋 Lista de Administradores</h2>
-                <button class="modal-close" onclick="hideModal('adminListModal')">✕</button>
-            </div>
-            
-            <div id="adminListContent">
-                <p style="text-align: center; color: var(--text-secondary); padding: 2rem;">
-                    Carregando lista de administradores...
-                </p>
-            </div>
-            
-            <div id="ownerControls" style="margin-top: 2rem; display: none;">
-                <div class="card">
-                    <h3>👑 Transferir Posse do Site</h3>
-                    <p style="color: var(--text-secondary); margin-bottom: 1rem;">
-                        Como proprietário do site, você pode transferir a posse para outro usuário. Esta ação é irreversível.
-                    </p>
-                    <div class="form-group">
-                        <label class="form-label">Selecionar Novo Proprietário</label>
-                        <select id="newOwnerSelect" class="form-select">
-                            <option value="">Selecione um usuário</option>
-                        </select>
-                    </div>
-                    <button class="btn btn-danger" onclick="transferOwnership()">Transferir Posse</button>
-                </div>
-                
-                <div class="card" style="margin-top: 1.5rem;">
-                    <h3>➕ Adicionar Administrador</h3>
-                    <div class="form-group">
-                        <label class="form-label">Selecionar Usuário para Promover</label>
-                        <select id="promoteUserSelect" class="form-select">
-                            <option value="">Selecione um usuário</option>
-                        </select>
-                    </div>
-                    <button class="btn btn-primary" onclick="promoteToAdmin()">Promover a Admin</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Member List Modal - NOVO MODAL PARA LISTA DE MEMBROS -->
-    <div id="memberListModal" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2 class="modal-title">👥 Lista de Membros</h2>
-                <button class="modal-close" onclick="hideModal('memberListModal')">✕</button>
-            </div>
-            
-            <div class="member-list" id="memberListContent">
-                <p style="text-align: center; color: var(--text-secondary); padding: 2rem;">
-                    Carregando lista de membros...
-                </p>
-            </div>
-        </div>
-    </div>
-
-    <!-- Create Content Modal -->
-    <div id="createContentModal" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2 class="modal-title" id="createContentTitle">Criar Conteúdo</h2>
-                <button class="modal-close" onclick="hideModal('createContentModal')">✕</button>
-            </div>
-            
-            <form id="createContentForm" onsubmit="createContent(event)">
-                <input type="hidden" id="contentType">
-                
-                <div class="form-group">
-                    <label class="form-label">Título</label>
-                    <input type="text" id="contentTitle" class="form-input" required>
-                </div>
-                
-                <div class="form-group">
-                    <label class="form-label">Conteúdo</label>
-                    <textarea id="contentBody" class="form-textarea" rows="8" required></textarea>
-                </div>
-                
-                <div class="form-group">
-                    <label class="form-label">Imagem de Destaque (URL)</label>
-                    <input type="url" id="contentImage" class="form-input">
-                </div>
-                
-                <div class="form-group">
-                    <label class="form-label">Status</label>
-                    <select id="contentStatus" class="form-select">
-                        <option value="published">Publicado</option>
-                        <option value="draft">Rascunho</option>
-                    </select>
-                </div>
-                
-                <div style="display: flex; gap: 1rem; margin-top: 1.5rem;">
-                    <button type="submit" class="btn btn-primary" style="flex: 1;">Publicar</button>
-                    <button type="button" class="btn btn-secondary" onclick="hideModal('createContentModal')">Cancelar</button>
-                </div>
-            </form>
-        </div>
-    </div>
-
-    <!-- Upload Modal -->
-    <div id="uploadModal" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2 class="modal-title" id="uploadModalTitle">Upload de Conteúdo</h2>
-                <button class="modal-close" onclick="hideModal('uploadModal')">✕</button>
-            </div>
-            
-            <form id="uploadForm" onsubmit="uploadContent(event)">
-                <input type="hidden" id="uploadType">
-                
-                <div class="form-group">
-                    <label class="form-label">Título</label>
-                    <input type="text" id="uploadTitle" class="form-input" required>
-                </div>
-                
-                <div class="form-group">
-                    <label class="form-label">Descrição</label>
-                    <textarea id="uploadDescription" class="form-textarea" rows="4"></textarea>
-                </div>
-                
-                <div class="form-group">
-                    <label class="form-label">Arquivo</label>
-                    <div class="file-upload">
-                        <input type="file" id="uploadFile" class="file-upload-input" required>
-                        <label for="uploadFile" class="file-upload-label">
-                            <span>📁 Escolher arquivo</span>
-                        </label>
-                    </div>
-                </div>
-                
-                <div class="form-group">
-                    <label class="form-label">Imagem de Destaque (URL)</label>
-                    <input type="url" id="uploadImage" class="form-input">
-                </div>
-                
-                <div style="display: flex; gap: 1rem; margin-top: 1.5rem;">
-                    <button type="submit" class="btn btn-primary" style="flex: 1;">Enviar</button>
-                    <button type="button" class="btn btn-secondary" onclick="hideModal('uploadModal')">Cancelar</button>
-                </div>
-            </form>
-        </div>
-    </div>
-
-    <!-- Create Player Modal -->
-    <div id="createPlayerModal" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2 class="modal-title">Adicionar Jogador</h2>
-                <button class="modal-close" onclick="hideModal('createPlayerModal')">✕</button>
-            </div>
-            
-            <form id="createPlayerForm" onsubmit="createPlayer(event)">
-                <div class="form-group">
-                    <label class="form-label">Nome do Jogador</label>
-                    <input type="text" id="playerName" class="form-input" required>
-                </div>
-                
-                <div class="form-group">
-                    <label class="form-label">Posição</label>
-                    <select id="playerPosition" class="form-select">
-                        <option value="GK">Goleiro</option>
-                        <option value="CB">Zagueiro</option>
-                        <option value="LB">Lateral Esquerdo</option>
-                        <option value="RB">Lateral Direito</option>
-                        <option value="DMF">Volante</option>
-                        <option value="CMF">Meio-Campista</option>
-                        <option value="AMF">Meia Ofensivo</option>
-                        <option value="LWF">Ponta Esquerda</option>
-                        <option value="RWF">Ponta Direita</option>
-                        <option value="SS">Segundo Atacante</option>
-                        <option value="CF">Centroavante</option>
-                    </select>
-                </div>
-                
-                <div class="form-group">
-                    <label class="form-label">Time</label>
-                    <input type="text" id="playerTeam" class="form-input">
-                </div>
-                
-                <div class="form-group">
-                    <label class="form-label">Nacionalidade</label>
-                    <input type="text" id="playerNationality" class="form-input">
-                </div>
-                
-                <div class="form-group">
-                    <label class="form-label">Idade</label>
-                    <input type="number" id="playerAge" class="form-input" min="16" max="45">
-                </div>
-                
-                <div class="form-group">
-                    <label class="form-label">Overall</label>
-                    <input type="number" id="playerOverall" class="form-input" min="40" max="100">
-                </div>
-                
-                <div class="form-group">
-                    <label class="form-label">Imagem (URL)</label>
-                    <input type="url" id="playerImage" class="form-input">
-                </div>
-                
-                <div style="display: flex; gap: 1rem; margin-top: 1.5rem;">
-                    <button type="submit" class="btn btn-primary" style="flex: 1;">Adicionar</button>
-                    <button type="button" class="btn btn-secondary" onclick="hideModal('createPlayerModal')">Cancelar</button>
-                </div>
-            </form>
-        </div>
-    </div>
-
-    <!-- Player Detail Modal -->
-    <div id="playerDetailModal" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2 class="modal-title" id="playerDetailName">Detalhes do Jogador</h2>
-                <button class="modal-close" onclick="hideModal('playerDetailModal')">✕</button>
-            </div>
-            
-            <div id="playerDetailContent">
-                <!-- Conteúdo será carregado dinamicamente -->
             </div>
         </div>
     </div>
@@ -3534,7 +2657,31 @@
             
             // Carregar conteúdo inicial
             loadInitialContent();
+            
+            // Configurar botão voltar ao topo
+            setupBackToTop();
         });
+
+        // Configurar botão voltar ao topo
+        function setupBackToTop() {
+            const backToTop = document.getElementById('backToTop');
+            
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 300) {
+                    backToTop.classList.add('visible');
+                } else {
+                    backToTop.classList.remove('visible');
+                }
+            });
+        }
+
+        // Função para voltar ao topo
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
 
         // Carregar estado do localStorage
         function loadState() {
@@ -3759,7 +2906,7 @@
             localStorage.setItem('efootballTheme', theme);
         }
 
-        // Alternar abas
+        // Alternar abas - CORRIGIDO PARA CHAMAR updateCommunityContent
         function switchTab(tab) {
             // Atualizar navegação
             document.querySelectorAll('.nav-link').forEach(function(link) {
@@ -3774,6 +2921,11 @@
             document.getElementById(tab).classList.add('active');
             
             state.currentTab = tab;
+            
+            // CORREÇÃO: Atualizar conteúdo da aba Comunidade quando ativada
+            if (tab === 'community') {
+                updateCommunityContent();
+            }
         }
 
         // Alternar abas da home
@@ -4532,7 +3684,7 @@
             }
         }
 
-        // Atualizar conteúdo da comunidade
+        // Atualizar conteúdo da comunidade - CORRIGIDO
         function updateCommunityContent(filter = 'all') {
             const container = document.getElementById('communityContent');
             let posts = state.posts;
@@ -4765,304 +3917,6 @@
                 navigator.clipboard.writeText(shareUrl);
                 showNotification('Link copiado para a área de transferência!', 'success');
             }
-        }
-
-        // Carregar painel administrativo
-        function loadAdminPanel() {
-            // Atualizar estatísticas
-            document.getElementById('adminTotalUsers').textContent = state.users.length;
-            document.getElementById('adminTotalAdmins').textContent = state.users.filter(u => u.role === 'admin' || u.role === 'owner').length;
-            document.getElementById('adminTotalContent').textContent = state.content.length;
-            document.getElementById('adminTotalPosts').textContent = state.posts.length;
-            
-            // Carregar conteúdo
-            loadAdminContent();
-        }
-
-        // Carregar conteúdo administrativo
-        function loadAdminContent() {
-            const container = document.getElementById('adminContentList');
-            const content = state.content.slice(0, 10); // Últimos 10 conteúdos
-            
-            if (content.length === 0) {
-                container.innerHTML = '<p style="text-align: center; color: var(--text-secondary); padding: 2rem;">Nenhum conteúdo publicado ainda</p>';
-                return;
-            }
-            
-            container.innerHTML = content.map(item => `
-                <div class="card" style="margin-bottom: 1rem;">
-                    <div style="display: flex; justify-content: space-between; align-items: flex-start;">
-                        <div style="flex: 1;">
-                            <span class="content-type-badge type-${item.type}">
-                                ${item.type === 'news' ? 'Notícia' : 
-                                  item.type === 'update' ? 'Novidade' : 
-                                  item.type === 'course' ? 'Curso' : 'Anúncio'}
-                            </span>
-                            <h4>${item.title}</h4>
-                            <p style="color: var(--text-secondary); margin: 0.5rem 0;">${item.body.substring(0, 100)}...</p>
-                            <div style="display: flex; gap: 1rem; font-size: 0.875rem; color: var(--text-muted);">
-                                <span>Por ${item.author.name}</span>
-                                <span>${new Date(item.date).toLocaleDateString('pt-BR')}</span>
-                                <span>${item.views} visualizações</span>
-                                <span class="content-status status-${item.status}">
-                                    ${item.status === 'published' ? 'Publicado' : 'Rascunho'}
-                                </span>
-                            </div>
-                        </div>
-                        <div class="content-actions">
-                            <button class="btn btn-secondary" onclick="editContent('${item.id}')">Editar</button>
-                            <button class="btn btn-danger" onclick="deleteContent('${item.id}')">Excluir</button>
-                        </div>
-                    </div>
-                </div>
-            `).join('');
-        }
-
-        // Carregar usuários administrativos
-        function loadAdminUsers() {
-            const container = document.getElementById('adminUsersList');
-            const users = state.users;
-            
-            container.innerHTML = users.map(user => `
-                <div class="member-card">
-                    <img src="${user.avatar}" alt="${user.name}" class="member-avatar">
-                    <div class="member-info">
-                        <div class="member-name">${user.name}</div>
-                        <div class="member-email">${user.email}</div>
-                    </div>
-                    <div class="member-role ${user.role === 'owner' ? 'role-owner' : user.role === 'admin' ? 'role-admin' : 'role-user'}">
-                        ${user.role === 'owner' ? '👑 Proprietário' : 
-                          user.role === 'admin' ? '🛡️ Admin' : '👤 Usuário'}
-                    </div>
-                    ${state.currentUser && state.currentUser.role === 'owner' && user.role !== 'owner' ? `
-                        <div class="content-actions">
-                            ${user.role === 'admin' ? 
-                                `<button class="btn btn-secondary" onclick="demoteFromAdmin('${user.id}')">Rebaixar</button>` :
-                                `<button class="btn btn-primary" onclick="promoteToAdmin('${user.id}')">Promover</button>`
-                            }
-                            <button class="btn btn-danger" onclick="banUser('${user.id}')">Banir</button>
-                        </div>
-                    ` : ''}
-                </div>
-            `).join('');
-        }
-
-        // Carregar estatísticas administrativas
-        function loadAdminStats() {
-            document.getElementById('statsNews').textContent = state.content.filter(item => item.type === 'news').length;
-            document.getElementById('statsUpdates').textContent = state.content.filter(item => item.type === 'update').length;
-            document.getElementById('statsCourses').textContent = state.content.filter(item => item.type === 'course').length;
-            document.getElementById('statsMarketplace').textContent = state.content.filter(item => item.type === 'marketplace').length;
-            document.getElementById('statsUsers').textContent = state.users.length;
-            document.getElementById('statsTotal').textContent = state.content.length;
-        }
-
-        // Carregar lista de administradores
-        function loadAdminList() {
-            const container = document.getElementById('adminListContent');
-            const admins = state.users.filter(user => user.role === 'admin' || user.role === 'owner');
-            
-            if (admins.length === 0) {
-                container.innerHTML = '<p style="text-align: center; color: var(--text-secondary); padding: 2rem;">Nenhum administrador encontrado</p>';
-                return;
-            }
-            
-            container.innerHTML = admins.map(admin => `
-                <div class="member-card">
-                    <img src="${admin.avatar}" alt="${admin.name}" class="member-avatar">
-                    <div class="member-info">
-                        <div class="member-name">${admin.name}</div>
-                        <div class="member-email">${admin.email}</div>
-                        <div style="font-size: 0.875rem; color: var(--text-muted);">
-                            Membro desde ${new Date(admin.joinDate).toLocaleDateString('pt-BR')}
-                        </div>
-                    </div>
-                    <div class="member-role ${admin.role === 'owner' ? 'role-owner' : 'role-admin'}">
-                        ${admin.role === 'owner' ? '👑 Proprietário' : '🛡️ Administrador'}
-                    </div>
-                </div>
-            `).join('');
-            
-            // Mostrar controles do proprietário
-            if (state.currentUser && state.currentUser.role === 'owner') {
-                document.getElementById('ownerControls').style.display = 'block';
-                
-                // Preencher select de novo proprietário
-                const newOwnerSelect = document.getElementById('newOwnerSelect');
-                newOwnerSelect.innerHTML = '<option value="">Selecione um usuário</option>' +
-                    state.users.filter(user => user.id !== state.currentUser.id).map(user => 
-                        `<option value="${user.id}">${user.name} (${user.email})</option>`
-                    ).join('');
-                
-                // Preencher select de promoção
-                const promoteUserSelect = document.getElementById('promoteUserSelect');
-                promoteUserSelect.innerHTML = '<option value="">Selecione um usuário</option>' +
-                    state.users.filter(user => user.role === 'user').map(user => 
-                        `<option value="${user.id}">${user.name} (${user.email})</option>`
-                    ).join('');
-            }
-        }
-
-        // Carregar lista de membros
-        function loadMemberList() {
-            const container = document.getElementById('memberListContent');
-            const users = state.users;
-            
-            if (users.length === 0) {
-                container.innerHTML = '<p style="text-align: center; color: var(--text-secondary); padding: 2rem;">Nenhum membro encontrado</p>';
-                return;
-            }
-            
-            container.innerHTML = users.map(user => `
-                <div class="member-card">
-                    <img src="${user.avatar}" alt="${user.name}" class="member-avatar">
-                    <div class="member-info">
-                        <div class="member-name">${user.name}</div>
-                        <div class="member-email">${user.email}</div>
-                        <div style="font-size: 0.875rem; color: var(--text-muted);">
-                            Membro desde ${new Date(user.joinDate).toLocaleDateString('pt-BR')}
-                        </div>
-                    </div>
-                    <div class="member-role ${user.role === 'owner' ? 'role-owner' : user.role === 'admin' ? 'role-admin' : 'role-user'}">
-                        ${user.role === 'owner' ? '👑 Proprietário' : 
-                          user.role === 'admin' ? '🛡️ Admin' : '👤 Usuário'}
-                    </div>
-                </div>
-            `).join('');
-        }
-
-        // Promover usuário a administrador
-        function promoteToAdmin(userId = null) {
-            const currentUser = state.currentUser;
-            if (!currentUser || currentUser.role !== 'owner') {
-                showNotification('Apenas o proprietário pode promover usuários!', 'error');
-                return;
-            }
-            
-            let targetUserId = userId;
-            if (!targetUserId) {
-                targetUserId = document.getElementById('promoteUserSelect').value;
-                if (!targetUserId) {
-                    showNotification('Selecione um usuário para promover!', 'error');
-                    return;
-                }
-            }
-            
-            const targetUser = state.users.find(u => u.id === targetUserId);
-            if (!targetUser) return;
-            
-            if (targetUser.role === 'admin') {
-                showNotification('Este usuário já é um administrador!', 'error');
-                return;
-            }
-            
-            if (state.adminCount >= state.maxAdmins) {
-                showNotification(`Limite de ${state.maxAdmins} administradores atingido!`, 'error');
-                return;
-            }
-            
-            targetUser.role = 'admin';
-            state.adminCount++;
-            saveState();
-            updateUI();
-            loadAdminList();
-            loadAdminUsers();
-            showNotification(`${targetUser.name} foi promovido a administrador!`, 'success');
-        }
-
-        // Rebaixar administrador
-        function demoteFromAdmin(userId) {
-            const currentUser = state.currentUser;
-            if (!currentUser || currentUser.role !== 'owner') {
-                showNotification('Apenas o proprietário pode rebaixar administradores!', 'error');
-                return;
-            }
-            
-            const targetUser = state.users.find(u => u.id === userId);
-            if (!targetUser) return;
-            
-            if (targetUser.role !== 'admin') {
-                showNotification('Este usuário não é um administrador!', 'error');
-                return;
-            }
-            
-            targetUser.role = 'user';
-            state.adminCount--;
-            saveState();
-            updateUI();
-            loadAdminList();
-            loadAdminUsers();
-            showNotification(`${targetUser.name} foi rebaixado a usuário comum!`, 'success');
-        }
-
-        // Transferir posse do site
-        function transferOwnership() {
-            const currentUser = state.currentUser;
-            if (!currentUser || currentUser.role !== 'owner') {
-                showNotification('Apenas o proprietário pode transferir a posse!', 'error');
-                return;
-            }
-            
-            const newOwnerId = document.getElementById('newOwnerSelect').value;
-            if (!newOwnerId) {
-                showNotification('Selecione um novo proprietário!', 'error');
-                return;
-            }
-            
-            const newOwner = state.users.find(u => u.id === newOwnerId);
-            if (!newOwner) return;
-            
-            if (!confirm(`Tem certeza que deseja transferir a posse do site para ${newOwner.name}? Esta ação é irreversível!`)) {
-                return;
-            }
-            
-            // Transferir posse
-            currentUser.role = 'admin';
-            newOwner.role = 'owner';
-            state.siteOwner = newOwner.email;
-            
-            saveState();
-            updateUI();
-            loadAdminList();
-            showNotification(`Posse do site transferida para ${newOwner.name}!`, 'success');
-        }
-
-        // Banir usuário
-        function banUser(userId) {
-            const currentUser = state.currentUser;
-            if (!currentUser || (currentUser.role !== 'admin' && currentUser.role !== 'owner')) {
-                showNotification('Apenas administradores podem banir usuários!', 'error');
-                return;
-            }
-            
-            const targetUser = state.users.find(u => u.id === userId);
-            if (!targetUser) return;
-            
-            if (targetUser.role === 'owner') {
-                showNotification('Não é possível banir o proprietário!', 'error');
-                return;
-            }
-            
-            if (targetUser.banned) {
-                targetUser.banned = false;
-                saveState();
-                updateUI();
-                loadAdminUsers();
-                showNotification(`${targetUser.name} foi desbanido!`, 'success');
-            } else {
-                if (confirm(`Tem certeza que deseja banir ${targetUser.name}?`)) {
-                    targetUser.banned = true;
-                    saveState();
-                    updateUI();
-                    loadAdminUsers();
-                    showNotification(`${targetUser.name} foi banido!`, 'success');
-                }
-            }
-        }
-
-        // Ocultar mensagem de boas-vindas
-        function hideWelcomeMessage() {
-            document.getElementById('welcomeAdminMessage').style.display = 'none';
         }
 
         // Mostrar notificação
