@@ -2161,6 +2161,729 @@
             color: var(--text-secondary);
             margin-bottom: 1rem;
         }
+
+        /* NEW: Enhanced Login System */
+        .login-container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            background: linear-gradient(135deg, var(--bg-secondary), var(--bg-tertiary));
+            box-shadow: var(--shadow-lg);
+        }
+
+        .login-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .login-logo {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 1rem;
+            border-radius: var(--border-radius);
+            display: block;
+        }
+
+        .login-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .login-subtitle {
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+        }
+
+        .password-toggle {
+            position: absolute;
+            right: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            cursor: pointer;
+        }
+
+        .password-strength {
+            margin-top: 0.5rem;
+            height: 4px;
+            border-radius: 2px;
+            background: rgba(255, 255, 255, 0.1);
+            overflow: hidden;
+        }
+
+        .password-strength-fill {
+            height: 100%;
+            transition: width 0.3s ease;
+        }
+
+        .password-weak { background: var(--error); width: 33%; }
+        .password-medium { background: var(--warning); width: 66%; }
+        .password-strong { background: var(--success); width: 100%; }
+
+        .remember-me {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .remember-me input {
+            width: auto;
+        }
+
+        .login-options {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .forgot-password {
+            color: var(--accent-primary);
+            text-decoration: none;
+            font-size: 0.875rem;
+        }
+
+        .forgot-password:hover {
+            text-decoration: underline;
+        }
+
+        .social-login {
+            margin-top: 2rem;
+            text-align: center;
+        }
+
+        .social-login-title {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+            position: relative;
+        }
+
+        .social-login-title::before,
+        .social-login-title::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            width: 30%;
+            height: 1px;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .social-login-title::before {
+            left: 0;
+        }
+
+        .social-login-title::after {
+            right: 0;
+        }
+
+        .social-login-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        .social-login-btn {
+            flex: 1;
+            padding: 0.75rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: var(--border-radius-sm);
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--text-primary);
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .social-login-btn:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .login-footer {
+            text-align: center;
+            margin-top: 2rem;
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+        }
+
+        .login-footer a {
+            color: var(--accent-primary);
+            text-decoration: none;
+        }
+
+        .login-footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* NEW: Enhanced Community */
+        .community-hero {
+            text-align: center;
+            padding: 3rem 0;
+            background: linear-gradient(135deg, var(--bg-secondary), var(--bg-tertiary));
+            border-radius: var(--border-radius);
+            margin-bottom: 2rem;
+        }
+
+        .community-stats {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-top: 2rem;
+        }
+
+        .community-stat {
+            text-align: center;
+        }
+
+        .community-stat-value {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--accent-primary);
+        }
+
+        .community-stat-label {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+        }
+
+        .post-interactions {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .interaction-btn {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: none;
+            border: none;
+            color: var(--text-secondary);
+            cursor: pointer;
+            transition: var(--transition);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+        }
+
+        .interaction-btn:hover {
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--text-primary);
+        }
+
+        .interaction-btn.active {
+            color: var(--accent-primary);
+        }
+
+        .post-reactions {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+        }
+
+        .reaction-btn {
+            background: none;
+            border: none;
+            font-size: 1.25rem;
+            cursor: pointer;
+            transition: var(--transition);
+            padding: 0.25rem;
+            border-radius: 50%;
+        }
+
+        .reaction-btn:hover {
+            transform: scale(1.2);
+        }
+
+        .post-share {
+            position: relative;
+        }
+
+        .share-options {
+            position: absolute;
+            bottom: 100%;
+            right: 0;
+            background: var(--bg-secondary);
+            border-radius: var(--border-radius);
+            padding: 1rem;
+            box-shadow: var(--shadow-lg);
+            display: none;
+            z-index: 10;
+            min-width: 150px;
+        }
+
+        .post-share:hover .share-options {
+            display: block;
+        }
+
+        .share-option {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem;
+            color: var(--text-primary);
+            text-decoration: none;
+            border-radius: var(--border-radius-sm);
+            transition: var(--transition);
+        }
+
+        .share-option:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        /* NEW: Enhanced Contact Page */
+        .contact-page {
+            min-height: calc(100vh - 200px);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .contact-hero {
+            text-align: center;
+            padding: 3rem 0;
+        }
+
+        .contact-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .contact-hero p {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto 3rem;
+        }
+
+        .contact-channels {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .contact-channel {
+            background: linear-gradient(135deg, var(--bg-secondary), var(--bg-tertiary));
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            text-align: center;
+            transition: var(--transition);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .contact-channel:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--accent-primary);
+        }
+
+        .channel-icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .channel-title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--accent-primary);
+        }
+
+        .channel-description {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .channel-action {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background: var(--accent-primary);
+            color: white;
+            text-decoration: none;
+            border-radius: var(--border-radius-sm);
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .channel-action:hover {
+            background: var(--accent-secondary);
+            transform: translateY(-2px);
+        }
+
+        /* NEW: Enhanced UI Elements */
+        .floating-action-btn {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: var(--accent-primary);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--shadow-lg);
+            cursor: pointer;
+            transition: var(--transition);
+            z-index: 1000;
+        }
+
+        .floating-action-btn:hover {
+            background: var(--accent-secondary);
+            transform: scale(1.1);
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-left: 0.5rem;
+        }
+
+        .badge-new {
+            background: var(--success);
+            color: white;
+        }
+
+        .badge-hot {
+            background: var(--error);
+            color: white;
+        }
+
+        .badge-popular {
+            background: var(--warning);
+            color: white;
+        }
+
+        .progress-bar {
+            height: 6px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 3px;
+            overflow: hidden;
+            margin-top: 0.5rem;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: var(--accent-primary);
+            border-radius: 3px;
+            transition: width 0.3s ease;
+        }
+
+        .tooltip {
+            position: relative;
+        }
+
+        .tooltip::after {
+            content: attr(data-tooltip);
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--bg-tertiary);
+            color: var(--text-primary);
+            padding: 0.5rem 1rem;
+            border-radius: var(--border-radius-sm);
+            font-size: 0.75rem;
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+            z-index: 1000;
+        }
+
+        .tooltip:hover::after {
+            opacity: 1;
+        }
+
+        /* Post Editor */
+        .post-editor {
+            margin-bottom: 2rem;
+        }
+
+        .editor-toolbar {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .editor-toolbar button {
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            color: var(--text-secondary);
+            padding: 0.5rem 1rem;
+            border-radius: var(--border-radius-sm);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .editor-toolbar button:hover {
+            background: rgba(255, 255, 255, 0.15);
+            color: var(--text-primary);
+        }
+
+        .editor-content {
+            min-height: 200px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: var(--border-radius);
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        /* Post Preview */
+        .post-preview {
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: var(--border-radius);
+            padding: 1.5rem;
+            margin-top: 1rem;
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        /* Poll System */
+        .poll-options {
+            margin-top: 1rem;
+        }
+
+        .poll-option {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 0.5rem;
+            padding: 0.5rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: var(--border-radius-sm);
+        }
+
+        .poll-results {
+            margin-top: 1rem;
+        }
+
+        .poll-result {
+            margin-bottom: 0.5rem;
+        }
+
+        .poll-bar {
+            height: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+            margin-top: 0.25rem;
+            overflow: hidden;
+        }
+
+        .poll-fill {
+            height: 100%;
+            background: var(--accent-primary);
+            border-radius: 4px;
+            transition: width 0.5s ease;
+        }
+
+        /* Tournament System */
+        .tournament-card {
+            background: linear-gradient(135deg, var(--bg-secondary), var(--bg-tertiary));
+            border-radius: var(--border-radius);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .tournament-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .tournament-participants {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .participant-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: var(--border-radius-sm);
+            padding: 1rem;
+            text-align: center;
+        }
+
+        /* Achievement System */
+        .achievements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .achievement-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: var(--border-radius);
+            padding: 1.5rem;
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .achievement-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .achievement-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .achievement-locked {
+            opacity: 0.5;
+        }
+
+        /* Marketplace */
+        .marketplace-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .marketplace-item {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            transition: var(--transition);
+        }
+
+        .marketplace-item:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .marketplace-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .marketplace-info {
+            padding: 1.5rem;
+        }
+
+        .marketplace-price {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--accent-primary);
+            margin-bottom: 1rem;
+        }
+
+        /* Live Stream */
+        .live-indicator {
+            background: var(--error);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-left: 0.5rem;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.5; }
+            100% { opacity: 1; }
+        }
+
+        .stream-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            margin-bottom: 1.5rem;
+        }
+
+        .stream-thumbnail {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .stream-info {
+            padding: 1.5rem;
+        }
+
+        /* Team Builder */
+        .team-builder {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: var(--border-radius);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .formation-selector {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .formation-option {
+            padding: 0.5rem 1rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: var(--border-radius-sm);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .formation-option.active {
+            background: var(--accent-primary);
+            color: white;
+        }
+
+        .pitch {
+            background: linear-gradient(135deg, #1a472a, #2a623d);
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            margin-top: 1rem;
+            position: relative;
+            min-height: 400px;
+        }
+
+        .player-slot {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .player-slot:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: scale(1.1);
+        }
     </style>
 </head>
 <body>
@@ -2194,7 +2917,7 @@
                     <li id="adminNav" style="display: none;">
                         <a href="#content" class="nav-link" onclick="switchTab('content'); toggleMobileMenu()">Conteúdo</a>
                     </li>
-                    <li><a href="#" class="nav-link" onclick="showLandingPage('contact'); toggleMobileMenu()">Contato</a></li>
+                    <li><a href="#contact" class="nav-link" onclick="switchTab('contact'); toggleMobileMenu()">Contato</a></li>
                 </ul>
                 
                 <div class="user-menu">
@@ -2390,8 +3113,28 @@
         <!-- Community Tab - CORRIGIDA -->
         <div id="community" class="tab-content" style="display: none;">
             <main class="container" style="padding: 2rem 0;">
+                <div class="community-hero">
+                    <h2 class="section-title">Comunidade eFootball</h2>
+                    <p>Conecte-se com outros jogadores, compartilhe experiências e faça parte da comunidade</p>
+                    
+                    <div class="community-stats">
+                        <div class="community-stat">
+                            <div class="community-stat-value" id="totalMembers">0</div>
+                            <div class="community-stat-label">Membros</div>
+                        </div>
+                        <div class="community-stat">
+                            <div class="community-stat-value" id="totalPosts">0</div>
+                            <div class="community-stat-label">Posts</div>
+                        </div>
+                        <div class="community-stat">
+                            <div class="community-stat-value" id="onlineUsers">0</div>
+                            <div class="community-stat-label">Online</div>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="section-header">
-                    <h2 class="section-title">Comunidade</h2>
+                    <h2 class="section-title">Discussões da Comunidade</h2>
                     <div>
                         <button id="createPostButton" class="btn btn-primary" onclick="showCreatePostModal()" style="display: none;">
                             ➕ Criar Post
@@ -2406,6 +3149,7 @@
                         <div class="filter-tag" onclick="filterPosts('help')">Ajuda</div>
                         <div class="filter-tag" onclick="filterPosts('showcase')">Destaques</div>
                         <div class="filter-tag" onclick="filterPosts('event')">Eventos</div>
+                        <div class="filter-tag" onclick="filterPosts('featured')">🌟 Destaques</div>
                     </div>
 
                     <div id="communityContent">
@@ -2521,10 +3265,84 @@
                 </div>
             </main>
         </div>
+
+        <!-- Contact Tab - NOVA ABA DE CONTATO -->
+        <div id="contact" class="tab-content" style="display: none;">
+            <main class="container contact-page">
+                <div class="contact-hero">
+                    <h1>Entre em Contato</h1>
+                    <p>Conecte-se com a comunidade brasileira de eFootball através dos nossos canais oficiais</p>
+                </div>
+
+                <div class="contact-channels">
+                    <div class="contact-channel">
+                        <div class="channel-icon">💬</div>
+                        <h3 class="channel-title">Grupo Principal</h3>
+                        <p class="channel-description">
+                            Participe do nosso grupo principal no WhatsApp para conversar com a comunidade, 
+                            tirar dúvidas e compartilhar experiências sobre eFootball.
+                        </p>
+                        <a href="https://chat.whatsapp.com/LKDH9BrZyca9ibRn6Ve3YW?mode=wwt" class="channel-action" target="_blank">
+                            Entrar no Grupo
+                        </a>
+                    </div>
+
+                    <div class="contact-channel">
+                        <div class="channel-icon">🎮</div>
+                        <h3 class="channel-title">Console e PC</h3>
+                        <p class="channel-description">
+                            Grupo específico para jogadores de console e PC. Discuta estratégias, 
+                            formações e encontre parceiros para partidas online.
+                        </p>
+                        <a href="https://chat.whatsapp.com/ByKdNJcvGo86aQCQUq4HJG?mode=wwt" class="channel-action" target="_blank">
+                            Entrar no Grupo
+                        </a>
+                    </div>
+
+                    <div class="contact-channel">
+                        <div class="channel-icon">📱</div>
+                        <h3 class="channel-title">Redes Sociais</h3>
+                        <p class="channel-description">
+                            Siga-nos nas redes sociais para ficar por dentro das últimas novidades, 
+                            atualizações e conteúdos exclusivos sobre eFootball.
+                        </p>
+                        <div class="social-links" style="justify-content: center; margin-top: 1.5rem;">
+                            <a href="https://www.instagram.com/efootballclubs?igsh=OXRtcjN2a2VqZGJ1" class="social-link" target="_blank">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                                </svg>
+                            </a>
+                            <a href="https://chat.whatsapp.com/LKDH9BrZyca9ibRn6Ve3YW?mode=wwt" class="social-link" target="_blank">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893-.001-3.189-1.262-6.189-3.553-8.436"/>
+                                </svg>
+                            </a>
+                            <a href="https://www.tiktok.com/@efootballclubs0?_t=ZM-90pdF3hLbZM&_r=1" class="social-link" target="_blank">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12.53.02C13.84 0 15.14.01 16.44 0c.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SEÇÃO DE CRÉDITOS -->
+                <div class="credits-section">
+                    <div class="credit-logo">
+                        <img src="konami.png" alt="KONAMI">
+                        <div>KONAMI Digital Entertainment Co., Ltd.</div>
+                    </div>
+                    <div class="credit-logo">
+                        <img src="efootballhub.png" alt="eFootballHub">
+                        <div>eFootballHub.net</div>
+                    </div>
+                </div>
+            </main>
+        </div>
     </div>
 
     <!-- Footer - CORRIGIDO PARA NÃO SOBREPOR CONTEÚDO -->
-    <footer class="footer">
+    <footer class="footer" id="mainFooter">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-description">
@@ -2554,7 +3372,7 @@
                     <ul class="footer-links">
                         <li><a href="#" onclick="showLandingPage('terms')">Termos de Uso</a></li>
                         <li><a href="#" onclick="showLandingPage('privacy')">Política de Privacidade</a></li>
-                        <li><a href="#" onclick="showLandingPage('contact')">Contato</a></li>
+                        <li><a href="#" onclick="switchTab('contact')">Contato</a></li>
                     </ul>
                 </div>
             </div>
@@ -2571,133 +3389,568 @@
     <!-- Botão Voltar ao Topo - NOVA MELHORIA -->
     <button id="backToTop" class="back-to-top" onclick="scrollToTop()">↑</button>
 
-    <!-- Landing Pages -->
-    
-    <!-- Contact Landing Page - REORGANIZADO E MELHORADO -->
-    <div id="contactPage" class="landing-page">
-        <div class="container">
-            <div class="landing-header">
-                <h1>Contato</h1>
-                <p>Entre em contato com os administradores da comunidade</p>
+    <!-- Floating Action Button -->
+    <div class="floating-action-btn" onclick="showCreatePostModal()" id="fabButton" style="display: none;">
+        <span style="font-size: 1.5rem;">+</span>
+    </div>
+
+    <!-- Modais -->
+    <!-- Modal de Login Aprimorado -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Login</h3>
+                <button class="modal-close" onclick="hideModal('loginModal')">&times;</button>
             </div>
             
-            <div class="landing-content">
-                <div class="contact-description">
-                    <p>Participe dos nossos grupos para ficar por dentro de tudo sobre eFootball, trocar experiências e encontrar parceiros de jogo:</p>
+            <div class="login-container">
+                <div class="login-header">
+                    <img src="ef.png" alt="eFootball Community Brasil" class="login-logo">
+                    <h2 class="login-title">Bem-vindo de volta!</h2>
+                    <p class="login-subtitle">Faça login para acessar sua conta</p>
                 </div>
                 
-                <div class="contact-grid">
-                    <div class="contact-card" onclick="window.open('https://chat.whatsapp.com/LKDH9BrZyca9ibRn6Ve3YW?mode=wwt', '_blank')">
-                        <div class="contact-card-icon">💬</div>
-                        <div class="contact-card-title">Grupo Principal</div>
-                        <div class="contact-card-description">Comunidade geral de eFootball</div>
-                        <div class="contact-card-action">Clique para entrar no grupo</div>
+                <form onsubmit="login(event)">
+                    <div class="form-group">
+                        <label class="form-label" for="loginEmail">E-mail</label>
+                        <input type="email" id="loginEmail" class="form-input" placeholder="seu@email.com" required>
                     </div>
                     
-                    <div class="contact-card" onclick="window.open('https://chat.whatsapp.com/ByKdNJcvGo86aQCQUq4HJG?mode=wwt', '_blank')">
-                        <div class="contact-card-icon">🎮</div>
-                        <div class="contact-card-title">Console e PC</div>
-                        <div class="contact-card-description">Grupo específico para jogadores de console e PC</div>
-                        <div class="contact-card-action">Clique para entrar no grupo</div>
+                    <div class="form-group" style="position: relative;">
+                        <label class="form-label" for="loginPassword">Senha</label>
+                        <input type="password" id="loginPassword" class="form-input" placeholder="Sua senha" required>
+                        <button type="button" class="password-toggle" onclick="togglePassword('loginPassword')">
+                            👁️
+                        </button>
+                    </div>
+                    
+                    <div class="login-options">
+                        <div class="remember-me">
+                            <input type="checkbox" id="rememberMe">
+                            <label for="rememberMe">Lembrar-me</label>
+                        </div>
+                        <a href="#" class="forgot-password" onclick="showForgotPasswordModal()">Esqueceu a senha?</a>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">Entrar</button>
+                </form>
+                
+                <div class="social-login">
+                    <div class="social-login-title">Ou entre com</div>
+                    <div class="social-login-buttons">
+                        <button class="social-login-btn" onclick="socialLogin('google')">
+                            <svg width="18" height="18" viewBox="0 0 24 24">
+                                <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                                <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                                <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+                                <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+                            </svg>
+                            Google
+                        </button>
+                        <button class="social-login-btn" onclick="socialLogin('facebook')">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="#1877F2">
+                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                            </svg>
+                            Facebook
+                        </button>
                     </div>
                 </div>
                 
-                <div class="card">
-                    <h3>📋 Antes de entrar em contato</h3>
-                    <p>Para agilizar o atendimento, verifique se sua dúvida já não foi respondida em nossos <a href="#" onclick="showLandingPage('terms')" style="color: var(--accent-primary);">Termos de Uso</a> ou <a href="#" onclick="showLandingPage('privacy')" style="color: var(--accent-primary);">Política de Privacidade</a>.</p>
-                </div>
-                
-                <!-- SEÇÃO DE CRÉDITOS - REMOVIDA A SEÇÃO "LEGAL" -->
-                <div class="credits-section">
-                    <div class="credit-logo">
-                        <img src="konami.png" alt="KONAMI">
-                        <div>KONAMI Digital Entertainment Co., Ltd.</div>
-                    </div>
-                    <div class="credit-logo">
-                        <img src="efootballhub.png" alt="eFootballHub">
-                        <div>eFootballHub.net</div>
-                    </div>
-                </div>
-                
-                <div class="back-button">
-                    <button class="btn btn-secondary" onclick="showMainSite()">← Voltar ao Site</button>
+                <div class="login-footer">
+                    Não tem uma conta? <a href="#" onclick="hideModal('loginModal'); showRegisterModal();">Cadastre-se</a>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- JavaScript -->
+    <!-- Modal de Registro Aprimorado -->
+    <div id="registerModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Criar Conta</h3>
+                <button class="modal-close" onclick="hideModal('registerModal')">&times;</button>
+            </div>
+            
+            <div class="login-container">
+                <div class="login-header">
+                    <img src="ef.png" alt="eFootball Community Brasil" class="login-logo">
+                    <h2 class="login-title">Junte-se à comunidade!</h2>
+                    <p class="login-subtitle">Crie sua conta para começar</p>
+                </div>
+                
+                <form onsubmit="register(event)">
+                    <div class="form-group">
+                        <label class="form-label" for="registerName">Nome completo</label>
+                        <input type="text" id="registerName" class="form-input" placeholder="Seu nome completo" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label" for="registerEmail">E-mail</label>
+                        <input type="email" id="registerEmail" class="form-input" placeholder="seu@email.com" required>
+                    </div>
+                    
+                    <div class="form-group" style="position: relative;">
+                        <label class="form-label" for="registerPassword">Senha</label>
+                        <input type="password" id="registerPassword" class="form-input" placeholder="Crie uma senha" required oninput="checkPasswordStrength(this.value)">
+                        <button type="button" class="password-toggle" onclick="togglePassword('registerPassword')">
+                            👁️
+                        </button>
+                        <div class="password-strength">
+                            <div class="password-strength-fill" id="passwordStrength"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group" style="position: relative;">
+                        <label class="form-label" for="registerConfirmPassword">Confirmar senha</label>
+                        <input type="password" id="registerConfirmPassword" class="form-input" placeholder="Confirme sua senha" required>
+                        <button type="button" class="password-toggle" onclick="togglePassword('registerConfirmPassword')">
+                            👁️
+                        </button>
+                    </div>
+                    
+                    <div class="form-group">
+                        <div class="remember-me">
+                            <input type="checkbox" id="acceptTerms" required>
+                            <label for="acceptTerms">Aceito os <a href="#" onclick="showLandingPage('terms')" style="color: var(--accent-primary);">Termos de Uso</a> e <a href="#" onclick="showLandingPage('privacy')" style="color: var(--accent-primary);">Política de Privacidade</a></label>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">Criar Conta</button>
+                </form>
+                
+                <div class="login-footer">
+                    Já tem uma conta? <a href="#" onclick="hideModal('registerModal'); showLoginModal();">Faça login</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Esqueci a Senha -->
+    <div id="forgotPasswordModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Recuperar Senha</h3>
+                <button class="modal-close" onclick="hideModal('forgotPasswordModal')">&times;</button>
+            </div>
+            
+            <div class="login-container">
+                <div class="login-header">
+                    <div class="channel-icon">🔐</div>
+                    <h2 class="login-title">Recuperar Senha</h2>
+                    <p class="login-subtitle">Digite seu e-mail para receber as instruções de recuperação</p>
+                </div>
+                
+                <form onsubmit="forgotPassword(event)">
+                    <div class="form-group">
+                        <label class="form-label" for="forgotEmail">E-mail</label>
+                        <input type="email" id="forgotEmail" class="form-input" placeholder="seu@email.com" required>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">Enviar Instruções</button>
+                </form>
+                
+                <div class="login-footer">
+                    Lembrou sua senha? <a href="#" onclick="hideModal('forgotPasswordModal'); showLoginModal();">Faça login</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Criar Post -->
+    <div id="createPostModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Criar Post</h3>
+                <button class="modal-close" onclick="hideModal('createPostModal')">&times;</button>
+            </div>
+            
+            <div class="post-editor">
+                <div class="form-group">
+                    <label class="form-label" for="postTitle">Título</label>
+                    <input type="text" id="postTitle" class="form-input" placeholder="Título do post" required>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label" for="postType">Tipo</label>
+                    <select id="postType" class="form-select" required>
+                        <option value="discussion">Discussão</option>
+                        <option value="help">Ajuda</option>
+                        <option value="showcase">Destaque</option>
+                        <option value="event">Evento</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label" for="postTags">Tags (separadas por vírgula)</label>
+                    <input type="text" id="postTags" class="form-input" placeholder="ex: efootball, dicas, gameplay">
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label" for="postContent">Conteúdo</label>
+                    <div class="editor-toolbar">
+                        <button type="button" onclick="formatText('bold')"><strong>B</strong></button>
+                        <button type="button" onclick="formatText('italic')"><em>I</em></button>
+                        <button type="button" onclick="formatText('underline')"><u>U</u></button>
+                        <button type="button" onclick="insertImage()">🖼️</button>
+                        <button type="button" onclick="insertLink()">🔗</button>
+                    </div>
+                    <div id="postContent" class="editor-content" contenteditable="true" style="min-height: 200px;"></div>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">Prévia</label>
+                    <div id="postPreview" class="post-preview">
+                        <p>A prévia do seu post aparecerá aqui...</p>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <div class="remember-me">
+                        <input type="checkbox" id="postFeatured">
+                        <label for="postFeatured">Destacar post (apenas administradores)</label>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <div class="remember-me">
+                        <input type="checkbox" id="postPinned">
+                        <label for="postPinned">Fixar post (apenas administradores)</label>
+                    </div>
+                </div>
+            </div>
+            
+            <button type="submit" class="btn btn-primary" style="width: 100%;" onclick="createPost()">Publicar Post</button>
+        </div>
+    </div>
+
+    <!-- Modal de Configurações -->
+    <div id="settingsModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Configurações</h3>
+                <button class="modal-close" onclick="hideModal('settingsModal')">&times;</button>
+            </div>
+            
+            <div class="settings-section">
+                <div class="settings-grid">
+                    <div class="setting-group">
+                        <h4 class="setting-title">Aparência</h4>
+                        <div class="form-group">
+                            <label class="form-label">Tema</label>
+                            <div style="display: flex; gap: 1rem;">
+                                <button class="btn btn-secondary" onclick="setTheme('dark')">🌙 Escuro</button>
+                                <button class="btn btn-secondary" onclick="setTheme('light')">☀️ Claro</button>
+                                <button class="btn btn-secondary" onclick="setTheme('auto')">🔄 Automático</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="setting-group">
+                        <h4 class="setting-title">Notificações</h4>
+                        <div class="form-group">
+                            <div class="remember-me">
+                                <input type="checkbox" id="notifyPosts" checked>
+                                <label for="notifyPosts">Notificar novos posts</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="remember-me">
+                                <input type="checkbox" id="notifyComments" checked>
+                                <label for="notifyComments">Notificar comentários</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="setting-group">
+                        <h4 class="setting-title">Privacidade</h4>
+                        <div class="form-group">
+                            <div class="remember-me">
+                                <input type="checkbox" id="profilePublic" checked>
+                                <label for="profilePublic">Perfil público</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="remember-me">
+                                <input type="checkbox" id="showOnlineStatus" checked>
+                                <label for="showOnlineStatus">Mostrar status online</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="danger-zone">
+                    <h3>Zona de Perigo</h3>
+                    <p style="color: var(--text-secondary); margin-bottom: 1rem;">
+                        Ações aqui não podem ser desfeitas. Tenha cuidado.
+                    </p>
+                    <button class="btn btn-danger" onclick="deleteAccount()">Excluir Conta</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Perfil -->
+    <div id="profileModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Meu Perfil</h3>
+                <button class="modal-close" onclick="hideModal('profileModal')">&times;</button>
+            </div>
+            
+            <div class="profile-section">
+                <div class="profile-header">
+                    <img id="profileAvatar" src="ef.png" alt="Avatar" class="profile-avatar">
+                    <div class="profile-info">
+                        <h2 id="profileName" class="profile-name">Usuário</h2>
+                        <p id="profileEmail" class="profile-email">usuario@email.com</p>
+                        <div id="profileRole" class="role-badge role-user">Usuário</div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">Alterar Avatar</label>
+                    <div class="file-upload">
+                        <input type="file" id="avatarUpload" class="file-upload-input" accept="image/*" onchange="uploadAvatar(event)">
+                        <label for="avatarUpload" class="file-upload-label">
+                            <span>📁 Escolher arquivo</span>
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label" for="profileBio">Biografia</label>
+                    <textarea id="profileBio" class="form-textarea" placeholder="Conte um pouco sobre você..."></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label" for="profileLocation">Localização</label>
+                    <input type="text" id="profileLocation" class="form-input" placeholder="Sua cidade/país">
+                </div>
+                
+                <button class="btn btn-primary" onclick="saveProfile()">Salvar Alterações</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Admin Panel -->
+    <div id="adminPanelModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">👑 Painel Administrativo</h3>
+                <button class="modal-close" onclick="hideModal('adminPanelModal')">&times;</button>
+            </div>
+            
+            <div class="user-role-display">
+                <h3 id="adminWelcomeTitle">Bem-vindo, Administrador!</h3>
+                <p id="adminWelcomeMessage">Você tem acesso total ao sistema de gerenciamento.</p>
+            </div>
+            
+            <div class="admin-dashboard">
+                <div class="admin-stat-card">
+                    <div class="admin-stat-value" id="adminTotalUsers">0</div>
+                    <div class="admin-stat-label">Usuários Totais</div>
+                </div>
+                <div class="admin-stat-card">
+                    <div class="admin-stat-value" id="adminTotalPosts">0</div>
+                    <div class="admin-stat-label">Posts</div>
+                </div>
+                <div class="admin-stat-card">
+                    <div class="admin-stat-value" id="adminTotalComments">0</div>
+                    <div class="admin-stat-label">Comentários</div>
+                </div>
+                <div class="admin-stat-card">
+                    <div class="admin-stat-value" id="adminOnlineUsers">0</div>
+                    <div class="admin-stat-label">Usuários Online</div>
+                </div>
+            </div>
+            
+            <div class="section-header" style="margin-top: 2rem;">
+                <h3>Ações de Administração</h3>
+            </div>
+            
+            <div class="grid grid-cols-3">
+                <div class="card">
+                    <h4>👥 Gerenciar Usuários</h4>
+                    <p>Visualizar, editar e banir usuários</p>
+                    <button class="btn btn-secondary" onclick="showMemberListModal()">Acessar</button>
+                </div>
+                
+                <div class="card">
+                    <h4>📝 Gerenciar Conteúdo</h4>
+                    <p>Moderar posts e comentários</p>
+                    <button class="btn btn-secondary" onclick="showContentManagementModal()">Acessar</button>
+                </div>
+                
+                <div class="card">
+                    <h4>⚙️ Configurações do Site</h4>
+                    <p>Alterar configurações gerais</p>
+                    <button class="btn btn-secondary" onclick="showSiteSettingsModal()">Acessar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Lista de Membros -->
+    <div id="memberListModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">👥 Lista de Membros</h3>
+                <button class="modal-close" onclick="hideModal('memberListModal')">&times;</button>
+            </div>
+            
+            <div class="member-list">
+                <!-- Lista de membros será carregada aqui -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Landing Pages -->
+    <div id="landingPages">
+        <!-- Terms Page -->
+        <div id="termsPage" class="landing-page">
+            <div class="container">
+                <div class="landing-header">
+                    <h1>Termos de Uso</h1>
+                    <p>Última atualização: 15 de Março de 2025</p>
+                </div>
+                
+                <div class="landing-content">
+                    <h2>1. Aceitação dos Termos</h2>
+                    <p>Ao acessar e usar o eFootball Community Brasil, você concorda em cumprir e estar vinculado a estes Termos de Uso.</p>
+                    
+                    <h2>2. Uso do Serviço</h2>
+                    <p>Você concorda em usar o serviço apenas para fins legais e de maneira que não infrinja os direitos de terceiros.</p>
+                    
+                    <h2>3. Conteúdo do Usuário</h2>
+                    <p>Você é responsável por todo o conteúdo que postar na plataforma. Não toleramos conteúdo ofensivo, discriminatório ou ilegal.</p>
+                    
+                    <h2>4. Propriedade Intelectual</h2>
+                    <p>Todo o conteúdo do site, exceto o enviado por usuários, é propriedade do eFootball Community Brasil.</p>
+                    
+                    <h2>5. Limitação de Responsabilidade</h2>
+                    <p>Não nos responsabilizamos por danos diretos, indiretos ou consequenciais resultantes do uso do serviço.</p>
+                    
+                    <div class="back-button">
+                        <button class="btn btn-primary" onclick="hideLandingPage()">Voltar ao Site</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Privacy Page -->
+        <div id="privacyPage" class="landing-page">
+            <div class="container">
+                <div class="landing-header">
+                    <h1>Política de Privacidade</h1>
+                    <p>Última atualização: 15 de Março de 2025</p>
+                </div>
+                
+                <div class="landing-content">
+                    <h2>1. Informações Coletadas</h2>
+                    <p>Coletamos informações que você nos fornece diretamente, como nome, e-mail e conteúdo que você posta.</p>
+                    
+                    <h2>2. Uso das Informações</h2>
+                    <p>Utilizamos suas informações para:</p>
+                    <ul>
+                        <li>Fornecer e melhorar nossos serviços</li>
+                        <li>Comunicar atualizações importantes</li>
+                        <li>Personalizar sua experiência</li>
+                    </ul>
+                    
+                    <h2>3. Compartilhamento de Informações</h2>
+                    <p>Não vendemos ou alugamos suas informações pessoais a terceiros.</p>
+                    
+                    <h2>4. Segurança</h2>
+                    <p>Implementamos medidas de segurança para proteger suas informações.</p>
+                    
+                    <h2>5. Seus Direitos</h2>
+                    <p>Você tem o direito de acessar, corrigir ou excluir suas informações pessoais.</p>
+                    
+                    <div class="back-button">
+                        <button class="btn btn-primary" onclick="hideLandingPage()">Voltar ao Site</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script Principal -->
     <script>
         // Estado da aplicação
         const state = {
             currentUser: null,
-            users: [],
-            content: [],
-            posts: [],
-            players: [],
-            siteOwner: null,
+            users: JSON.parse(localStorage.getItem('users')) || [],
+            posts: JSON.parse(localStorage.getItem('posts')) || [],
+            content: JSON.parse(localStorage.getItem('content')) || [],
+            players: JSON.parse(localStorage.getItem('players')) || [],
+            settings: JSON.parse(localStorage.getItem('settings')) || { theme: 'dark' },
             adminCount: 0,
-            maxAdmins: 8,
-            currentTab: 'home',
-            currentHomeTab: 'news',
-            currentContentTab: 'news'
+            userCount: 0
         };
 
         // Inicialização
         document.addEventListener('DOMContentLoaded', function() {
-            loadState();
-            updateUI();
+            initApp();
             setupEventListeners();
-            checkScroll();
+            updateUI();
             
-            // Verificar se há um usuário logado
-            if (state.currentUser) {
+            // Verificar se há usuário logado
+            const savedUser = localStorage.getItem('currentUser');
+            if (savedUser) {
+                state.currentUser = JSON.parse(savedUser);
                 updateUI();
             }
             
-            // Carregar conteúdo inicial
-            loadInitialContent();
+            // Inicializar estatísticas
+            updateCommunityStats();
+            updateAdminStats();
+            
+            // Configurar tema
+            if (state.settings.theme) {
+                document.body.setAttribute('data-theme', state.settings.theme);
+            }
+            
+            // Configurar rolagem do header
+            window.addEventListener('scroll', handleScroll);
             
             // Configurar botão voltar ao topo
             setupBackToTop();
         });
 
-        // Configurar botão voltar ao topo
-        function setupBackToTop() {
-            const backToTop = document.getElementById('backToTop');
+        // Inicialização da aplicação
+        function initApp() {
+            // Inicializar contadores
+            state.adminCount = state.users.filter(user => user.role === 'admin').length;
+            state.userCount = state.users.length;
             
-            window.addEventListener('scroll', function() {
-                if (window.pageYOffset > 300) {
-                    backToTop.classList.add('visible');
-                } else {
-                    backToTop.classList.remove('visible');
-                }
-            });
-        }
-
-        // Função para voltar ao topo
-        function scrollToTop() {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        }
-
-        // Carregar estado do localStorage
-        function loadState() {
-            const savedState = localStorage.getItem('efootballState');
-            if (savedState) {
-                const parsedState = JSON.parse(savedState);
-                Object.assign(state, parsedState);
+            // Carregar dados iniciais se necessário
+            if (state.users.length === 0) {
+                createInitialData();
             }
-            
-            // Inicializar contador de admins
-            state.adminCount = state.users.filter(user => user.role === 'admin' || user.role === 'owner').length;
         }
 
-        // Salvar estado no localStorage
-        function saveState() {
-            localStorage.setItem('efootballState', JSON.stringify(state));
+        // Criar dados iniciais
+        function createInitialData() {
+            // Criar alguns posts de exemplo
+            const examplePosts = [
+                {
+                    id: '1',
+                    title: 'Bem-vindos à Comunidade!',
+                    content: 'Esta é a comunidade brasileira oficial de eFootball. Conecte-se com outros jogadores, compartilhe experiências e faça parte da nossa comunidade!',
+                    author: 'Admin',
+                    authorId: 'admin',
+                    date: new Date(),
+                    likes: 15,
+                    comments: [],
+                    tags: ['boas-vindas', 'comunidade'],
+                    type: 'discussion',
+                    pinned: true,
+                    featured: true
+                }
+            ];
+            
+            state.posts = examplePosts;
+            saveState();
         }
 
         // Atualizar interface
@@ -2708,447 +3961,84 @@
                 // Usuário logado
                 document.getElementById('loginButton').style.display = 'none';
                 document.getElementById('registerButton').style.display = 'none';
-                document.getElementById('userMenuButton').style.display = 'block';
+                document.getElementById('userMenuButton').style.display = 'inline-flex';
+                document.getElementById('createPostButton').style.display = 'inline-flex';
+                document.getElementById('fabButton').style.display = 'flex';
                 
-                // Atualizar badge de usuário
+                // Atualizar badge do usuário
                 const userBadge = document.getElementById('userBadge');
                 if (user.role === 'owner') {
-                    userBadge.innerHTML = '👑 Proprietário';
                     userBadge.className = 'owner-badge';
+                    userBadge.textContent = '👑 Proprietário';
                 } else if (user.role === 'admin') {
-                    userBadge.innerHTML = '🛡️ Administrador';
                     userBadge.className = 'admin-badge';
+                    userBadge.textContent = '🛡️ Administrador';
                 } else {
-                    userBadge.innerHTML = '👤 Usuário';
                     userBadge.className = 'visitor-badge';
+                    userBadge.textContent = '👤 ' + user.name;
                 }
                 
-                // Mostrar/ocultar elementos de admin
-                const isAdmin = user.role === 'admin' || user.role === 'owner';
-                document.getElementById('adminNav').style.display = isAdmin ? 'block' : 'none';
-                document.getElementById('adminMenuItems').style.display = isAdmin ? 'block' : 'none';
-                document.getElementById('adminPostButton').style.display = isAdmin ? 'block' : 'none';
-                document.getElementById('adminSheetsButton').style.display = isAdmin ? 'block' : 'none';
-                document.getElementById('adminFormationsButton').style.display = isAdmin ? 'block' : 'none';
-                document.getElementById('adminCourseButton').style.display = isAdmin ? 'block' : 'none';
-                document.getElementById('createPostButton').style.display = 'block';
-                
-                // Atualizar perfil
-                if (document.getElementById('profileName')) {
-                    document.getElementById('profileName').textContent = user.name;
-                    document.getElementById('profileEmail').textContent = user.email;
-                    document.getElementById('profileFullName').value = user.name;
-                    
-                    const profileRole = document.getElementById('profileRole');
-                    if (user.role === 'owner') {
-                        profileRole.innerHTML = '👑 Proprietário';
-                        profileRole.className = 'role-badge role-owner';
-                    } else if (user.role === 'admin') {
-                        profileRole.innerHTML = '🛡️ Administrador';
-                        profileRole.className = 'role-badge role-admin';
-                    } else {
-                        profileRole.innerHTML = '👤 Usuário';
-                        profileRole.className = 'role-badge role-user';
-                    }
-                    
-                    // Atualizar avatar se existir
-                    if (user.avatar) {
-                        document.getElementById('profileAvatar').src = user.avatar;
-                        document.getElementById('previewImage').src = user.avatar;
-                    }
-                }
-                
-                // Atualizar configurações
-                if (document.getElementById('userRoleDisplay')) {
-                    const roleDisplay = document.getElementById('userRoleDisplay');
-                    if (user.role === 'owner') {
-                        roleDisplay.innerHTML = '👑 PROPRIETÁRIO';
-                        roleDisplay.className = 'role-badge-large role-owner-large';
-                    } else if (user.role === 'admin') {
-                        roleDisplay.innerHTML = '🛡️ ADMINISTRADOR';
-                        roleDisplay.className = 'role-badge-large role-admin-large';
-                    } else {
-                        roleDisplay.innerHTML = '👤 USUÁRIO';
-                        roleDisplay.className = 'role-badge-large role-user-large';
-                    }
+                // Mostrar menu de admin se for admin ou owner
+                if (user.role === 'admin' || user.role === 'owner') {
+                    document.getElementById('adminNav').style.display = 'block';
+                    document.getElementById('adminMenuItems').style.display = 'block';
+                    document.getElementById('adminPostButton').style.display = 'block';
+                    document.getElementById('adminSheetsButton').style.display = 'block';
+                    document.getElementById('adminFormationsButton').style.display = 'block';
+                    document.getElementById('adminCourseButton').style.display = 'block';
                 }
             } else {
                 // Visitante
-                document.getElementById('loginButton').style.display = 'block';
-                document.getElementById('registerButton').style.display = 'block';
+                document.getElementById('loginButton').style.display = 'inline-flex';
+                document.getElementById('registerButton').style.display = 'inline-flex';
                 document.getElementById('userMenuButton').style.display = 'none';
-                document.getElementById('userBadge').innerHTML = 'Visitante';
-                document.getElementById('userBadge').className = 'visitor-badge';
-                
-                // Ocultar elementos de admin
+                document.getElementById('createPostButton').style.display = 'none';
+                document.getElementById('fabButton').style.display = 'none';
                 document.getElementById('adminNav').style.display = 'none';
                 document.getElementById('adminMenuItems').style.display = 'none';
                 document.getElementById('adminPostButton').style.display = 'none';
                 document.getElementById('adminSheetsButton').style.display = 'none';
                 document.getElementById('adminFormationsButton').style.display = 'none';
                 document.getElementById('adminCourseButton').style.display = 'none';
-                document.getElementById('createPostButton').style.display = 'none';
+                
+                document.getElementById('userBadge').className = 'visitor-badge';
+                document.getElementById('userBadge').textContent = 'Visitante';
             }
             
-            // Atualizar conteúdo
-            updateContent();
+            // Atualizar conteúdo da comunidade
             updateCommunityContent();
-        }
-
-        // Configurar event listeners
-        function setupEventListeners() {
-            // Pesquisa de jogadores
-            const searchInput = document.getElementById('playerSearch');
-            if (searchInput) {
-                searchInput.addEventListener('input', debounce(searchPlayers, 300));
-            }
             
-            // Preview de avatar
-            const avatarUrl = document.getElementById('avatarUrl');
-            if (avatarUrl) {
-                avatarUrl.addEventListener('input', function() {
-                    const url = this.value.trim();
-                    if (url) {
-                        if (url.match(/\.(mp4|webm|ogg)$/i)) {
-                            document.getElementById('previewImage').style.display = 'none';
-                            document.getElementById('previewVideo').style.display = 'block';
-                            document.getElementById('previewVideo').src = url;
-                        } else {
-                            document.getElementById('previewImage').style.display = 'block';
-                            document.getElementById('previewVideo').style.display = 'none';
-                            document.getElementById('previewImage').src = url;
-                        }
-                    }
-                });
-            }
-            
-            // Upload de avatar
-            const avatarUpload = document.getElementById('avatarUpload');
-            if (avatarUpload) {
-                avatarUpload.addEventListener('change', function(e) {
-                    const file = e.target.files[0];
-                    if (file) {
-                        const reader = new FileReader();
-                        reader.onload = function(e) {
-                            if (file.type.startsWith('video/')) {
-                                document.getElementById('previewImage').style.display = 'none';
-                                document.getElementById('previewVideo').style.display = 'block';
-                                document.getElementById('previewVideo').src = e.target.result;
-                            } else {
-                                document.getElementById('previewImage').style.display = 'block';
-                                document.getElementById('previewVideo').style.display = 'none';
-                                document.getElementById('previewImage').src = e.target.result;
-                            }
-                        };
-                        reader.readAsDataURL(file);
-                    }
-                });
-            }
-            
-            // Scroll do header
-            window.addEventListener('scroll', checkScroll);
+            // Atualizar estatísticas
+            updateCommunityStats();
         }
 
-        // Verificar scroll para header
-        function checkScroll() {
-            const header = document.getElementById('header');
-            if (window.scrollY > 50) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-        }
-
-        // Alternar menu mobile
-        function toggleMobileMenu() {
-            const navLinks = document.getElementById('navLinks');
-            navLinks.classList.toggle('active');
-        }
-
-        // Alternar dropdown
-        function toggleDropdown(id) {
-            const dropdown = document.getElementById(id);
-            dropdown.classList.toggle('show');
-            
-            // Fechar outros dropdowns
-            document.querySelectorAll('.dropdown-content').forEach(function(dropdown) {
-                if (dropdown.id !== id && dropdown.classList.contains('show')) {
-                    dropdown.classList.remove('show');
-                }
-            });
-        }
-
-        // Fechar dropdowns ao clicar fora
-        window.addEventListener('click', function(e) {
-            if (!e.target.matches('.dropdown button')) {
-                document.querySelectorAll('.dropdown-content').forEach(function(dropdown) {
-                    dropdown.classList.remove('show');
-                });
-            }
-        });
-
-        // Alternar tema
-        function toggleTheme() {
-            const currentTheme = document.documentElement.getAttribute('data-theme');
-            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-            document.documentElement.setAttribute('data-theme', newTheme);
-            localStorage.setItem('efootballTheme', newTheme);
-        }
-
-        // Mudar tema
-        function changeTheme(theme) {
-            if (theme === 'auto') {
-                const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-                document.documentElement.setAttribute('data-theme', prefersDark ? 'dark' : 'light');
-            } else {
-                document.documentElement.setAttribute('data-theme', theme);
-            }
-            localStorage.setItem('efootballTheme', theme);
-        }
-
-        // Alternar abas - CORRIGIDO PARA CHAMAR updateCommunityContent
-        function switchTab(tab) {
-            // Atualizar navegação
-            document.querySelectorAll('.nav-link').forEach(function(link) {
-                link.classList.remove('active');
-            });
-            document.querySelector(`.nav-link[href="#${tab}"]`).classList.add('active');
-            
-            // Atualizar conteúdo
-            document.querySelectorAll('.tab-content').forEach(function(content) {
-                content.classList.remove('active');
-            });
-            document.getElementById(tab).classList.add('active');
-            
-            state.currentTab = tab;
-            
-            // CORREÇÃO: Atualizar conteúdo da aba Comunidade quando ativada
-            if (tab === 'community') {
-                updateCommunityContent();
-            }
-        }
-
-        // Alternar abas da home
-        function switchHomeTab(tab) {
-            // Atualizar navegação
-            document.querySelectorAll('#home .tab').forEach(function(tabEl) {
-                tabEl.classList.remove('active');
-            });
-            event.target.classList.add('active');
-            
-            // Atualizar conteúdo
-            document.querySelectorAll('#home .tab-content').forEach(function(content) {
-                content.classList.remove('active');
-            });
-            document.getElementById(`${tab}-tab`).classList.add('active');
-            
-            state.currentHomeTab = tab;
-        }
-
-        // Alternar abas de conteúdo
-        function switchContentTab(tab) {
-            // Atualizar navegação
-            document.querySelectorAll('#content .tab').forEach(function(tabEl) {
-                tabEl.classList.remove('active');
-            });
-            event.target.classList.add('active');
-            
-            // Atualizar conteúdo
-            document.querySelectorAll('#content .tab-content').forEach(function(content) {
-                content.classList.remove('active');
-            });
-            document.getElementById(tab).classList.add('active');
-            
-            state.currentContentTab = tab;
-        }
-
-        // Alternar abas do admin
-        function switchAdminTab(tab) {
-            // Atualizar navegação
-            document.querySelectorAll('#adminPanel .tab').forEach(function(tabEl) {
-                tabEl.classList.remove('active');
-            });
-            event.target.classList.add('active');
-            
-            // Atualizar conteúdo
-            document.querySelectorAll('#adminPanel .tab-content').forEach(function(content) {
-                content.classList.remove('active');
-            });
-            document.getElementById(`admin${tab.charAt(0).toUpperCase() + tab.slice(1)}`).classList.add('active');
-            
-            // Carregar conteúdo específico da aba
-            if (tab === 'users') {
-                loadAdminUsers();
-            } else if (tab === 'stats') {
-                loadAdminStats();
-            }
-        }
-
-        // Mostrar modal
-        function showModal(id) {
-            document.getElementById(id).style.display = 'flex';
-        }
-
-        // Ocultar modal
-        function hideModal(id) {
-            document.getElementById(id).style.display = 'none';
-        }
-
-        // Mostrar modal de login
-        function showLoginModal() {
-            showModal('loginModal');
-        }
-
-        // Mostrar modal de registro
-        function showRegisterModal() {
-            showModal('registerModal');
-        }
-
-        // Mostrar modal de perfil
-        function showProfileModal() {
-            const user = state.currentUser;
-            if (user) {
-                document.getElementById('profileName').textContent = user.name;
-                document.getElementById('profileEmail').textContent = user.email;
-                document.getElementById('profileFullName').value = user.name;
-                
-                const profileRole = document.getElementById('profileRole');
-                if (user.role === 'owner') {
-                    profileRole.innerHTML = '👑 Proprietário';
-                    profileRole.className = 'role-badge role-owner';
-                } else if (user.role === 'admin') {
-                    profileRole.innerHTML = '🛡️ Administrador';
-                    profileRole.className = 'role-badge role-admin';
-                } else {
-                    profileRole.innerHTML = '👤 Usuário';
-                    profileRole.className = 'role-badge role-user';
-                }
-                
-                if (user.avatar) {
-                    document.getElementById('profileAvatar').src = user.avatar;
-                    document.getElementById('previewImage').src = user.avatar;
-                }
-            }
-            showModal('profileModal');
-        }
-
-        // Mostrar modal de configurações
-        function showSettingsModal() {
-            showModal('settingsModal');
-        }
-
-        // Mostrar modal de criar post
-        function showCreatePostModal() {
-            showModal('createPostModal');
-        }
-
-        // Mostrar modal de criar conteúdo
-        function showCreateContentModal(type) {
-            const titleMap = {
-                'news': 'Criar Notícia',
-                'update': 'Criar Novidade',
-                'course': 'Criar Curso',
-                'marketplace': 'Criar Anúncio'
-            };
-            
-            document.getElementById('createContentTitle').textContent = titleMap[type] || 'Criar Conteúdo';
-            document.getElementById('contentType').value = type;
-            showModal('createContentModal');
-        }
-
-        // Mostrar modal de upload
-        function showUploadModal(type) {
-            const titleMap = {
-                'sheets': 'Upload de Ficha Técnica',
-                'formations': 'Upload de Formação Tática',
-                'courses': 'Upload de Curso'
-            };
-            
-            document.getElementById('uploadModalTitle').textContent = titleMap[type] || 'Upload de Conteúdo';
-            document.getElementById('uploadType').value = type;
-            showModal('uploadModal');
-        }
-
-        // Mostrar modal de criar jogador
-        function showCreatePlayerModal() {
-            showModal('createPlayerModal');
-        }
-
-        // Mostrar painel administrativo
-        function showAdminPanel() {
-            loadAdminPanel();
-            showModal('adminPanel');
-        }
-
-        // Mostrar modal de lista de admins
-        function showAdminListModal() {
-            loadAdminList();
-            showModal('adminListModal');
-        }
-
-        // Mostrar modal de lista de membros
-        function showMemberListModal() {
-            loadMemberList();
-            showModal('memberListModal');
-        }
-
-        // Mostrar landing page
-        function showLandingPage(page) {
-            document.getElementById('mainSite').style.display = 'none';
-            document.querySelectorAll('.landing-page').forEach(function(landing) {
-                landing.classList.remove('active');
-            });
-            document.getElementById(`${page}Page`).classList.add('active');
-            
-            // Atualizar navegação
-            document.querySelectorAll('.nav-link').forEach(function(link) {
-                link.classList.remove('active');
-            });
-        }
-
-        // Mostrar site principal
-        function showMainSite() {
-            document.getElementById('mainSite').style.display = 'block';
-            document.querySelectorAll('.landing-page').forEach(function(landing) {
-                landing.classList.remove('active');
-            });
-            
-            // Atualizar navegação
-            document.querySelectorAll('.nav-link').forEach(function(link) {
-                link.classList.remove('active');
-            });
-            document.querySelector('.nav-link[href="#home"]').classList.add('active');
-        }
-
-        // Fazer login
+        // Sistema de Login
         function login(event) {
             event.preventDefault();
             
             const email = document.getElementById('loginEmail').value;
             const password = document.getElementById('loginPassword').value;
             
-            // Verificar credenciais
             const user = state.users.find(u => u.email === email && u.password === password);
             
             if (user) {
+                if (user.banned) {
+                    showNotification('Esta conta foi banida.', 'error');
+                    return;
+                }
+                
                 state.currentUser = user;
+                user.lastActive = new Date();
                 saveState();
                 updateUI();
                 hideModal('loginModal');
-                showNotification('Login realizado com sucesso!', 'success');
-                
-                // Mostrar mensagem de boas-vindas para novos admins
-                if (user.role === 'admin' && !user.welcomeShown) {
-                    user.welcomeShown = true;
-                    saveState();
-                    document.getElementById('welcomeAdminMessage').style.display = 'block';
-                }
+                showNotification(`Bem-vindo de volta, ${user.name}!`, 'success');
             } else {
-                showNotification('E-mail ou senha incorretos!', 'error');
+                showNotification('E-mail ou senha incorretos.', 'error');
             }
         }
 
-        // Registrar novo usuário - SISTEMA DE CARGOS IMPLEMENTADO
+        // Sistema de Registro MELHORADO
         function register(event) {
             event.preventDefault();
             
@@ -3157,41 +4047,38 @@
             const password = document.getElementById('registerPassword').value;
             const confirmPassword = document.getElementById('registerConfirmPassword').value;
             
-            // Verificar se as senhas coincidem
+            // Validações
             if (password !== confirmPassword) {
-                showNotification('As senhas não coincidem!', 'error');
+                showNotification('As senhas não coincidem', 'error');
                 return;
             }
             
-            // Verificar se o e-mail já está em uso
-            if (state.users.some(u => u.email === email)) {
-                showNotification('Este e-mail já está em uso!', 'error');
+            if (state.users.find(u => u.email === email)) {
+                showNotification('Este e-mail já está cadastrado', 'error');
                 return;
             }
             
-            // Determinar o cargo do usuário - IMPLEMENTAÇÃO DA LÓGICA DE CARGOS
+            // Definir role - SISTEMA DE CARGO MELHORADO
             let role = 'user';
-            
             if (state.users.length === 0) {
-                // Primeiro usuário se torna proprietário
-                role = 'owner';
-                state.siteOwner = email;
-            } else if (state.users.length >= 1 && state.users.length <= state.maxAdmins) {
-                // Os próximos 8 usuários se tornam administradores
+                role = 'owner'; // Primeiro usuário é owner
+            } else if (state.users.length < 9) { // Próximos 8 usuários são admins
                 role = 'admin';
-                state.adminCount++;
             }
             
-            // Criar novo usuário
+            // Criar usuário
             const newUser = {
                 id: Date.now().toString(),
-                name: name,
-                email: email,
-                password: password,
+                name,
+                email,
+                password,
                 role: role,
-                avatar: 'https://via.placeholder.com/120x120?text=Avatar',
-                joinDate: new Date().toISOString(),
-                welcomeShown: false
+                avatar: null,
+                bio: '',
+                location: '',
+                joinedAt: new Date(),
+                lastActive: new Date(),
+                banned: false
             };
             
             state.users.push(newUser);
@@ -3200,500 +4087,107 @@
             updateUI();
             hideModal('registerModal');
             
-            // Mostrar mensagem de acordo com o cargo
+            // Mensagem especial baseada no cargo
+            let roleMessage = '';
             if (role === 'owner') {
-                showNotification('🎉 Parabéns! Você é o primeiro usuário e agora é o PROPRIETÁRIO do site!', 'success');
+                roleMessage = 'Parabéns! Você é o proprietário desta comunidade.';
             } else if (role === 'admin') {
-                showNotification('🎉 Parabéns! Você agora é um ADMINISTRADOR do site!', 'success');
-                document.getElementById('welcomeAdminMessage').style.display = 'block';
-            } else {
-                showNotification('Conta criada com sucesso! Bem-vindo à comunidade!', 'success');
+                roleMessage = 'Parabéns! Você recebeu o cargo de administrador.';
             }
+            
+            showNotification(`Conta criada com sucesso, ${name}! ${roleMessage}`, 'success');
         }
 
-        // Fazer logout
+        // Logout
         function logout() {
             state.currentUser = null;
             saveState();
             updateUI();
-            showNotification('Logout realizado com sucesso!', 'success');
+            showNotification('Você saiu da sua conta.', 'info');
         }
 
-        // Atualizar avatar
-        function updateAvatar() {
-            const user = state.currentUser;
-            if (!user) return;
-            
-            const avatarUrl = document.getElementById('avatarUrl').value;
-            const avatarFile = document.getElementById('avatarUpload').files[0];
-            
-            if (avatarUrl) {
-                user.avatar = avatarUrl;
-                showNotification('Avatar atualizado com sucesso!', 'success');
-            } else if (avatarFile) {
-                const reader = new FileReader();
-                reader.onload = function(e) {
-                    user.avatar = e.target.result;
-                    saveState();
-                    updateUI();
-                    showNotification('Avatar atualizado com sucesso!', 'success');
-                };
-                reader.readAsDataURL(avatarFile);
-            } else {
-                showNotification('Selecione uma imagem ou forneça uma URL!', 'error');
-                return;
-            }
-            
-            saveState();
-            updateUI();
-        }
-
-        // Atualizar perfil
-        function updateProfile() {
-            const user = state.currentUser;
-            if (!user) return;
-            
-            const fullName = document.getElementById('profileFullName').value;
-            
-            if (fullName) {
-                user.name = fullName;
-                saveState();
-                updateUI();
-                showNotification('Perfil atualizado com sucesso!', 'success');
-                hideModal('profileModal');
-            } else {
-                showNotification('Nome não pode estar vazio!', 'error');
-            }
-        }
-
-        // Salvar configurações
-        function saveSettings() {
-            showNotification('Configurações salvas com sucesso!', 'success');
-            hideModal('settingsModal');
-        }
-
-        // Excluir conta
-        function deleteAccount() {
-            if (confirm('Tem certeza que deseja excluir sua conta? Esta ação não pode ser desfeita.')) {
-                const userIndex = state.users.findIndex(u => u.id === state.currentUser.id);
-                if (userIndex !== -1) {
-                    state.users.splice(userIndex, 1);
-                    state.currentUser = null;
-                    saveState();
-                    updateUI();
-                    showNotification('Conta excluída com sucesso!', 'success');
-                    hideModal('settingsModal');
-                }
-            }
-        }
-
-        // Criar post
-        function createPost(event) {
-            event.preventDefault();
-            
-            const user = state.currentUser;
-            if (!user) {
-                showNotification('Você precisa estar logado para criar um post!', 'error');
-                return;
-            }
-            
-            const title = document.getElementById('postTitle').value;
-            const content = document.getElementById('postContent').value;
-            const tags = document.getElementById('postTags').value.split(',').map(tag => tag.trim()).filter(tag => tag);
-            const media = document.getElementById('postMedia').value;
-            const type = document.getElementById('postType').value;
-            
-            const newPost = {
-                id: Date.now().toString(),
-                title: title,
-                content: content,
-                tags: tags,
-                media: media,
-                type: type,
-                author: {
-                    id: user.id,
-                    name: user.name,
-                    avatar: user.avatar,
-                    role: user.role
-                },
-                date: new Date().toISOString(),
-                likes: 0,
-                comments: [],
-                liked: false
-            };
-            
-            state.posts.unshift(newPost);
-            saveState();
-            updateCommunityContent();
-            hideModal('createPostModal');
-            showNotification('Post criado com sucesso!', 'success');
-        }
-
-        // Filtrar posts
-        function filterPosts(type) {
-            document.querySelectorAll('.filter-tag').forEach(function(tag) {
-                tag.classList.remove('active');
+        // Trocar de aba
+        function switchTab(tabName) {
+            // Esconder todas as abas
+            document.querySelectorAll('.tab-content').forEach(tab => {
+                tab.style.display = 'none';
             });
+            
+            // Remover classe active de todas as abas
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.classList.remove('active');
+            });
+            
+            // Mostrar aba selecionada
+            document.getElementById(tabName).style.display = 'block';
+            
+            // Adicionar classe active ao link selecionado
+            document.querySelector(`.nav-link[href="#${tabName}"]`).classList.add('active');
+            
+            // Atualizar conteúdo específico da aba
+            if (tabName === 'community') {
+                updateCommunityContent();
+                updateCommunityStats();
+            } else if (tabName === 'content') {
+                updateContentManagement();
+            }
+            
+            // Fechar menu mobile se estiver aberto
+            document.getElementById('navLinks').classList.remove('active');
+        }
+
+        // Trocar aba na home
+        function switchHomeTab(tabName) {
+            // Esconder todas as abas da home
+            document.querySelectorAll('#home .tab-content').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            // Remover classe active de todas as tabs
+            document.querySelectorAll('#home .tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            // Mostrar aba selecionada
+            document.getElementById(`${tabName}-tab`).classList.add('active');
+            
+            // Adicionar classe active à tab selecionada
             event.target.classList.add('active');
             
-            updateCommunityContent(type);
+            // Atualizar conteúdo específico
+            if (tabName === 'sheets') {
+                // Inicializar sistema de pesquisa
+                initPlayerSearch();
+            }
         }
 
-        // Criar conteúdo
-        function createContent(event) {
-            event.preventDefault();
+        // Trocar aba de conteúdo
+        function switchContentTab(tabName) {
+            // Esconder todas as abas de conteúdo
+            document.querySelectorAll('#content .tab-content').forEach(tab => {
+                tab.style.display = 'none';
+            });
             
-            const user = state.currentUser;
-            if (!user || (user.role !== 'admin' && user.role !== 'owner')) {
-                showNotification('Apenas administradores podem criar conteúdo!', 'error');
-                return;
-            }
+            // Remover classe active de todas as tabs
+            document.querySelectorAll('#content .tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
             
-            const type = document.getElementById('contentType').value;
-            const title = document.getElementById('contentTitle').value;
-            const body = document.getElementById('contentBody').value;
-            const image = document.getElementById('contentImage').value;
-            const status = document.getElementById('contentStatus').value;
+            // Mostrar aba selecionada
+            document.getElementById(tabName).style.display = 'block';
             
-            const newContent = {
-                id: Date.now().toString(),
-                type: type,
-                title: title,
-                body: body,
-                image: image,
-                status: status,
-                author: {
-                    id: user.id,
-                    name: user.name,
-                    avatar: user.avatar,
-                    role: user.role
-                },
-                date: new Date().toISOString(),
-                views: 0
-            };
+            // Adicionar classe active à tab selecionada
+            event.target.classList.add('active');
             
-            state.content.unshift(newContent);
-            saveState();
-            updateContent();
-            hideModal('createContentModal');
-            showNotification('Conteúdo criado com sucesso!', 'success');
-        }
-
-        // Upload de conteúdo
-        function uploadContent(event) {
-            event.preventDefault();
-            
-            const user = state.currentUser;
-            if (!user || (user.role !== 'admin' && user.role !== 'owner')) {
-                showNotification('Apenas administradores podem fazer upload de conteúdo!', 'error');
-                return;
-            }
-            
-            const type = document.getElementById('uploadType').value;
-            const title = document.getElementById('uploadTitle').value;
-            const description = document.getElementById('uploadDescription').value;
-            const file = document.getElementById('uploadFile').files[0];
-            const image = document.getElementById('uploadImage').value;
-            
-            if (!file) {
-                showNotification('Selecione um arquivo para upload!', 'error');
-                return;
-            }
-            
-            const newContent = {
-                id: Date.now().toString(),
-                type: type,
-                title: title,
-                description: description,
-                file: file.name,
-                image: image,
-                author: {
-                    id: user.id,
-                    name: user.name,
-                    avatar: user.avatar,
-                    role: user.role
-                },
-                date: new Date().toISOString(),
-                downloads: 0
-            };
-            
-            state.content.unshift(newContent);
-            saveState();
-            updateContent();
-            hideModal('uploadModal');
-            showNotification('Conteúdo enviado com sucesso!', 'success');
-        }
-
-        // Criar jogador
-        function createPlayer(event) {
-            event.preventDefault();
-            
-            const user = state.currentUser;
-            if (!user || (user.role !== 'admin' && user.role !== 'owner')) {
-                showNotification('Apenas administradores podem adicionar jogadores!', 'error');
-                return;
-            }
-            
-            const name = document.getElementById('playerName').value;
-            const position = document.getElementById('playerPosition').value;
-            const team = document.getElementById('playerTeam').value;
-            const nationality = document.getElementById('playerNationality').value;
-            const age = document.getElementById('playerAge').value;
-            const overall = document.getElementById('playerOverall').value;
-            const image = document.getElementById('playerImage').value;
-            
-            const newPlayer = {
-                id: Date.now().toString(),
-                name: name,
-                position: position,
-                team: team,
-                nationality: nationality,
-                age: age,
-                overall: overall,
-                image: image || 'https://via.placeholder.com/100x100?text=Jogador',
-                stats: {
-                    pace: Math.floor(Math.random() * 30) + 70,
-                    shooting: Math.floor(Math.random() * 30) + 70,
-                    passing: Math.floor(Math.random() * 30) + 70,
-                    dribbling: Math.floor(Math.random() * 30) + 70,
-                    defense: Math.floor(Math.random() * 30) + 70,
-                    physical: Math.floor(Math.random() * 30) + 70
-                },
-                addedBy: {
-                    id: user.id,
-                    name: user.name
-                },
-                date: new Date().toISOString()
-            };
-            
-            state.players.push(newPlayer);
-            saveState();
-            updateContent();
-            hideModal('createPlayerModal');
-            showNotification('Jogador adicionado com sucesso!', 'success');
-        }
-
-        // Pesquisar jogadores
-        function searchPlayers() {
-            const query = document.getElementById('playerSearch').value.toLowerCase().trim();
-            const resultsContainer = document.getElementById('searchResults');
-            
-            if (!query) {
-                resultsContainer.innerHTML = `
-                    <div class="empty-state">
-                        <div class="empty-state-icon">👥</div>
-                        <h4>Pesquise por jogadores</h4>
-                        <p>Digite o nome de um jogador para ver suas fichas técnicas.</p>
-                    </div>
-                `;
-                return;
-            }
-            
-            const filteredPlayers = state.players.filter(player => 
-                player.name.toLowerCase().includes(query) ||
-                player.team.toLowerCase().includes(query) ||
-                player.position.toLowerCase().includes(query)
-            );
-            
-            if (filteredPlayers.length === 0) {
-                resultsContainer.innerHTML = `
-                    <div class="empty-state">
-                        <div class="empty-state-icon">🔍</div>
-                        <h4>Nenhum jogador encontrado</h4>
-                        <p>Tente buscar por outro nome, time ou posição.</p>
-                    </div>
-                `;
-                return;
-            }
-            
-            let html = `
-                <div class="search-results-grid">
-                    ${filteredPlayers.map(player => `
-                        <div class="sheet-card" onclick="showPlayerDetail('${player.id}')">
-                            ${player.image ? `<img src="${player.image}" alt="${player.name}" class="sheet-image">` : ''}
-                            <div class="sheet-info">
-                                <div class="sheet-title">${player.name}</div>
-                                <div class="sheet-description">
-                                    <div>${player.position} • ${player.team}</div>
-                                    <div>${player.nationality} • ${player.age} anos</div>
-                                </div>
-                                <div class="sheet-meta">
-                                    <span>Overall: <strong>${player.overall}</strong></span>
-                                    <span>${new Date(player.date).toLocaleDateString('pt-BR')}</span>
-                                </div>
-                            </div>
-                        </div>
-                    `).join('')}
-                </div>
-            `;
-            
-            resultsContainer.innerHTML = html;
-        }
-
-        // Mostrar detalhes do jogador
-        function showPlayerDetail(playerId) {
-            const player = state.players.find(p => p.id === playerId);
-            if (!player) return;
-            
-            document.getElementById('playerDetailName').textContent = player.name;
-            
-            const stats = player.stats || {};
-            const statBars = Object.entries(stats).map(([key, value]) => `
-                <div>
-                    <div style="display: flex; justify-content: space-between; margin-bottom: 0.25rem;">
-                        <span>${getStatLabel(key)}</span>
-                        <span>${value}</span>
-                    </div>
-                    <div class="stat-bar">
-                        <div class="stat-fill" style="width: ${value}%;"></div>
-                    </div>
-                </div>
-            `).join('');
-            
-            document.getElementById('playerDetailContent').innerHTML = `
-                <div class="player-detail">
-                    <div style="text-align: center;">
-                        <img src="${player.image}" alt="${player.name}" style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover; margin-bottom: 1rem;">
-                        <h3>${player.name}</h3>
-                        <p>${player.position} • ${player.team}</p>
-                        <p>${player.nationality} • ${player.age} anos</p>
-                        <div style="font-size: 2rem; font-weight: bold; color: var(--accent-primary); margin: 1rem 0;">
-                            ${player.overall}
-                        </div>
-                    </div>
-                    <div>
-                        <h4>Estatísticas</h4>
-                        <div class="player-stats">
-                            ${statBars}
-                        </div>
-                        <div style="margin-top: 1.5rem;">
-                            <p><strong>Adicionado por:</strong> ${player.addedBy.name}</p>
-                            <p><strong>Data:</strong> ${new Date(player.date).toLocaleDateString('pt-BR')}</p>
-                        </div>
-                    </div>
-                </div>
-            `;
-            
-            showModal('playerDetailModal');
-        }
-
-        // Obter label da estatística
-        function getStatLabel(key) {
-            const labels = {
-                pace: 'Velocidade',
-                shooting: 'Finalização',
-                passing: 'Passe',
-                dribbling: 'Drible',
-                defense: 'Defesa',
-                physical: 'Físico'
-            };
-            return labels[key] || key;
-        }
-
-        // Carregar conteúdo inicial
-        function loadInitialContent() {
-            // Adicionar alguns jogadores de exemplo se não houver nenhum
-            if (state.players.length === 0) {
-                state.players = [
-                    {
-                        id: '1',
-                        name: 'Lionel Messi',
-                        position: 'RWF',
-                        team: 'Inter Miami',
-                        nationality: 'Argentina',
-                        age: 36,
-                        overall: 90,
-                        image: 'https://via.placeholder.com/100x100?text=Messi',
-                        stats: {
-                            pace: 85,
-                            shooting: 92,
-                            passing: 91,
-                            dribbling: 95,
-                            defense: 38,
-                            physical: 65
-                        },
-                        addedBy: {
-                            id: 'system',
-                            name: 'Sistema'
-                        },
-                        date: new Date().toISOString()
-                    },
-                    {
-                        id: '2',
-                        name: 'Cristiano Ronaldo',
-                        position: 'CF',
-                        team: 'Al Nassr',
-                        nationality: 'Portugal',
-                        age: 38,
-                        overall: 88,
-                        image: 'https://via.placeholder.com/100x100?text=CR7',
-                        stats: {
-                            pace: 82,
-                            shooting: 93,
-                            passing: 82,
-                            dribbling: 85,
-                            defense: 35,
-                            physical: 78
-                        },
-                        addedBy: {
-                            id: 'system',
-                            name: 'Sistema'
-                        },
-                        date: new Date().toISOString()
-                    }
-                ];
-                saveState();
-            }
-            
-            updateContent();
-            updateCommunityContent();
-        }
-
-        // Atualizar conteúdo
-        function updateContent() {
-            // Atualizar notícias
-            const news = state.content.filter(item => item.type === 'news' && item.status === 'published');
-            const newsContainer = document.getElementById('newsPreview');
-            
-            if (news.length === 0) {
-                newsContainer.innerHTML = `
-                    <div class="empty-state">
-                        <div class="empty-state-icon">📰</div>
-                        <h4>Nenhuma notícia publicada</h4>
-                        <p>As notícias mais recentes sobre eFootball aparecerão aqui.</p>
-                    </div>
-                `;
-            } else {
-                newsContainer.innerHTML = news.slice(0, 3).map(item => `
-                    <div class="card" style="margin-bottom: 1rem;">
-                        <span class="content-type-badge type-news">Notícia</span>
-                        <h4>${item.title}</h4>
-                        <p>${item.body.substring(0, 150)}...</p>
-                        <div class="content-meta">
-                            <span>Por ${item.author.name}</span>
-                            <span>${new Date(item.date).toLocaleDateString('pt-BR')}</span>
-                            <span>${item.views} visualizações</span>
-                        </div>
-                    </div>
-                `).join('');
-            }
-            
-            // Atualizar conteúdo administrativo
-            if (state.currentUser && (state.currentUser.role === 'admin' || state.currentUser.role === 'owner')) {
-                updateAdminContent();
-            }
+            // Atualizar conteúdo específico
+            updateContentTab(tabName);
         }
 
         // Atualizar conteúdo da comunidade - CORRIGIDO
-        function updateCommunityContent(filter = 'all') {
+        function updateCommunityContent() {
             const container = document.getElementById('communityContent');
-            let posts = state.posts;
             
-            if (filter !== 'all') {
-                posts = posts.filter(post => post.type === filter);
-            }
-            
-            if (posts.length === 0) {
+            if (!state.posts || state.posts.length === 0) {
                 container.innerHTML = `
                     <div class="empty-state">
                         <div class="empty-state-icon">💬</div>
@@ -3704,249 +4198,675 @@
                 return;
             }
             
-            container.innerHTML = posts.map(post => `
+            // Ordenar posts: fixados primeiro, depois por data
+            const sortedPosts = [...state.posts].sort((a, b) => {
+                if (a.pinned && !b.pinned) return -1;
+                if (!a.pinned && b.pinned) return 1;
+                return new Date(b.date) - new Date(a.date);
+            });
+            
+            container.innerHTML = sortedPosts.map(post => `
                 <div class="community-post">
                     <div class="post-header">
                         <div class="post-author">
-                            <img src="${post.author.avatar}" alt="${post.author.name}" class="post-author-avatar">
+                            <img src="${post.avatar || 'ef.png'}" alt="${post.author}" class="post-author-avatar">
                             <div class="post-author-info">
-                                <div class="post-author-name">${post.author.name}</div>
+                                <div class="post-author-name">${post.author}</div>
                                 <div class="post-author-role">
-                                    ${post.author.role === 'owner' ? '👑 Proprietário' : 
-                                      post.author.role === 'admin' ? '🛡️ Administrador' : '👤 Usuário'}
+                                    ${post.authorRole === 'admin' ? '🛡️ Administrador' : 
+                                      post.authorRole === 'owner' ? '👑 Proprietário' : '👤 Membro'}
                                 </div>
                             </div>
                         </div>
-                        <div class="post-date">${new Date(post.date).toLocaleDateString('pt-BR')}</div>
+                        <div class="post-date">${formatDate(post.date)}</div>
                     </div>
                     
                     <div class="post-content">
-                        <h4>${post.title}</h4>
+                        <h3>${post.title}</h3>
                         <p>${post.content}</p>
                     </div>
                     
-                    ${post.media ? `
-                        <div class="post-media">
-                            ${post.media.match(/\.(mp4|webm|ogg)$/i) ? 
-                                `<video src="${post.media}" controls style="max-width: 100%;"></video>` : 
-                                `<img src="${post.media}" alt="Mídia do post" style="max-width: 100%; border-radius: var(--border-radius);">`
-                            }
-                        </div>
-                    ` : ''}
-                    
-                    ${post.tags.length > 0 ? `
-                        <div style="margin: 1rem 0;">
+                    ${post.tags && post.tags.length > 0 ? `
+                        <div class="post-tags">
                             ${post.tags.map(tag => `<span class="post-tag">#${tag}</span>`).join('')}
                         </div>
                     ` : ''}
                     
+                    ${post.pinned ? '<span class="post-pinned">📌 Fixado</span>' : ''}
+                    ${post.featured ? '<span class="post-featured">🌟 Destaque</span>' : ''}
+                    
                     <div class="post-actions">
-                        <button class="post-action ${post.liked ? 'active' : ''}" onclick="likePost('${post.id}')">
-                            ❤️ ${post.likes}
+                        <button class="post-action" onclick="likePost('${post.id}')">
+                            <span>👍</span> Curtir (${post.likes || 0})
                         </button>
-                        <button class="post-action" onclick="showPostDetail('${post.id}')">
-                            💬 ${post.comments.length}
+                        <button class="post-action" onclick="showComments('${post.id}')">
+                            <span>💬</span> Comentar (${post.comments ? post.comments.length : 0})
                         </button>
-                        <button class="post-action" onclick="sharePost('${post.id}')">
-                            🔗 Compartilhar
-                        </button>
+                        <div class="post-share">
+                            <button class="post-action">
+                                <span>↗️</span> Compartilhar
+                            </button>
+                            <div class="share-options">
+                                <a href="#" class="share-option" onclick="sharePost('${post.id}', 'whatsapp')">
+                                    <span>📱</span> WhatsApp
+                                </a>
+                                <a href="#" class="share-option" onclick="sharePost('${post.id}', 'facebook')">
+                                    <span>👤</span> Facebook
+                                </a>
+                                <a href="#" class="share-option" onclick="sharePost('${post.id}', 'twitter')">
+                                    <span>🐦</span> Twitter
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div id="comments-${post.id}" class="post-comments" style="display: none;">
+                        <!-- Comentários serão carregados aqui -->
                     </div>
                 </div>
             `).join('');
         }
 
-        // Curtir post
+        // Atualizar estatísticas da comunidade - CORRIGIDO
+        function updateCommunityStats() {
+            // Atualizar contadores
+            document.getElementById('totalMembers').textContent = state.users.length;
+            document.getElementById('totalPosts').textContent = state.posts.length;
+            
+            // Calcular usuários online (últimos 15 minutos)
+            const onlineThreshold = new Date(Date.now() - 15 * 60 * 1000);
+            const onlineUsers = state.users.filter(user => new Date(user.lastActive) > onlineThreshold).length;
+            document.getElementById('onlineUsers').textContent = onlineUsers;
+        }
+
+        // Atualizar estatísticas do admin
+        function updateAdminStats() {
+            document.getElementById('adminTotalUsers').textContent = state.users.length;
+            document.getElementById('adminTotalPosts').textContent = state.posts.length;
+            
+            // Calcular total de comentários
+            const totalComments = state.posts.reduce((total, post) => total + (post.comments ? post.comments.length : 0), 0);
+            document.getElementById('adminTotalComments').textContent = totalComments;
+            
+            // Calcular usuários online
+            const onlineThreshold = new Date(Date.now() - 15 * 60 * 1000);
+            const onlineUsers = state.users.filter(user => new Date(user.lastActive) > onlineThreshold).length;
+            document.getElementById('adminOnlineUsers').textContent = onlineUsers;
+        }
+
+        // Criar post - SISTEMA MELHORADO
+        function createPost() {
+            if (!state.currentUser) {
+                showNotification('Faça login para criar um post.', 'error');
+                return;
+            }
+            
+            const title = document.getElementById('postTitle').value;
+            const content = document.getElementById('postContent').innerHTML;
+            const type = document.getElementById('postType').value;
+            const tags = document.getElementById('postTags').value.split(',').map(tag => tag.trim()).filter(tag => tag);
+            const featured = document.getElementById('postFeatured').checked && (state.currentUser.role === 'admin' || state.currentUser.role === 'owner');
+            const pinned = document.getElementById('postPinned').checked && (state.currentUser.role === 'admin' || state.currentUser.role === 'owner');
+            
+            const newPost = {
+                id: Date.now().toString(),
+                title,
+                content,
+                author: state.currentUser.name,
+                authorId: state.currentUser.id,
+                authorRole: state.currentUser.role,
+                avatar: state.currentUser.avatar,
+                date: new Date(),
+                likes: 0,
+                comments: [],
+                tags,
+                type,
+                featured,
+                pinned
+            };
+            
+            state.posts.unshift(newPost);
+            saveState();
+            updateCommunityContent();
+            hideModal('createPostModal');
+            showNotification('Post criado com sucesso!', 'success');
+        }
+
+        // Sistema de likes
         function likePost(postId) {
-            const user = state.currentUser;
-            if (!user) {
-                showNotification('Você precisa estar logado para curtir posts!', 'error');
+            if (!state.currentUser) {
+                showLoginOverlay();
                 return;
             }
             
             const post = state.posts.find(p => p.id === postId);
-            if (!post) return;
-            
-            if (post.liked) {
-                post.likes--;
-                post.liked = false;
-            } else {
+            if (post) {
+                if (!post.likes) post.likes = 0;
                 post.likes++;
-                post.liked = true;
+                saveState();
+                updateCommunityContent();
             }
-            
-            saveState();
-            updateCommunityContent();
         }
 
-        // Mostrar detalhes do post
-        function showPostDetail(postId) {
+        // Mostrar comentários
+        function showComments(postId) {
+            if (!state.currentUser) {
+                showLoginOverlay();
+                return;
+            }
+            
+            const commentsContainer = document.getElementById(`comments-${postId}`);
             const post = state.posts.find(p => p.id === postId);
-            if (!post) return;
             
-            document.getElementById('postDetailTitle').textContent = post.title;
-            
-            const commentsHtml = post.comments.map(comment => `
-                <div class="community-comment">
-                    <div class="comment-header">
-                        <div class="comment-author">
-                            <img src="${comment.author.avatar}" alt="${comment.author.name}" class="comment-author-avatar">
-                            <span>${comment.author.name}</span>
-                        </div>
-                        <div class="comment-date">${new Date(comment.date).toLocaleDateString('pt-BR')}</div>
+            if (commentsContainer.style.display === 'none') {
+                commentsContainer.style.display = 'block';
+                commentsContainer.innerHTML = `
+                    <div class="comment-form">
+                        <textarea id="comment-${postId}" class="form-textarea" placeholder="Digite seu comentário..." rows="3"></textarea>
+                        <button class="btn btn-primary" onclick="addComment('${postId}')" style="margin-top: 0.5rem;">Comentar</button>
                     </div>
-                    <div class="comment-content">${comment.content}</div>
-                    <div class="comment-actions">
-                        <button class="comment-action" onclick="likeComment('${post.id}', '${comment.id}')">
-                            ❤️ ${comment.likes}
-                        </button>
-                    </div>
-                </div>
-            `).join('');
-            
-            document.getElementById('postDetailContent').innerHTML = `
-                <div class="community-post">
-                    <div class="post-header">
-                        <div class="post-author">
-                            <img src="${post.author.avatar}" alt="${post.author.name}" class="post-author-avatar">
-                            <div class="post-author-info">
-                                <div class="post-author-name">${post.author.name}</div>
-                                <div class="post-author-role">
-                                    ${post.author.role === 'owner' ? '👑 Proprietário' : 
-                                      post.author.role === 'admin' ? '🛡️ Administrador' : '👤 Usuário'}
+                    ${post.comments && post.comments.length > 0 ? 
+                        post.comments.map(comment => `
+                            <div class="community-comment">
+                                <div class="comment-header">
+                                    <div class="comment-author">
+                                        <img src="${comment.avatar || 'ef.png'}" alt="${comment.author}" class="comment-author-avatar">
+                                        <span class="comment-author-name">${comment.author}</span>
+                                    </div>
+                                    <div class="comment-date">${formatDate(comment.date)}</div>
+                                </div>
+                                <div class="comment-content">${comment.content}</div>
+                                <div class="comment-actions">
+                                    <button class="comment-action" onclick="likeComment('${postId}', '${comment.id}')">👍 ${comment.likes || 0}</button>
+                                    ${(state.currentUser && (state.currentUser.id === comment.authorId || state.currentUser.role === 'admin' || state.currentUser.role === 'owner')) ? 
+                                        `<button class="comment-action" onclick="deleteComment('${postId}', '${comment.id}')">🗑️</button>` : ''}
                                 </div>
                             </div>
-                        </div>
-                        <div class="post-date">${new Date(post.date).toLocaleDateString('pt-BR')}</div>
-                    </div>
-                    
-                    <div class="post-content">
-                        <p>${post.content}</p>
-                    </div>
-                    
-                    ${post.media ? `
-                        <div class="post-media">
-                            ${post.media.match(/\.(mp4|webm|ogg)$/i) ? 
-                                `<video src="${post.media}" controls style="max-width: 100%;"></video>` : 
-                                `<img src="${post.media}" alt="Mídia do post" style="max-width: 100%; border-radius: var(--border-radius);">`
-                            }
-                        </div>
-                    ` : ''}
-                    
-                    <div class="post-actions">
-                        <button class="post-action ${post.liked ? 'active' : ''}" onclick="likePost('${post.id}')">
-                            ❤️ ${post.likes}
-                        </button>
-                        <button class="post-action">
-                            💬 ${post.comments.length}
-                        </button>
-                        <button class="post-action" onclick="sharePost('${post.id}')">
-                            🔗 Compartilhar
-                        </button>
-                    </div>
-                </div>
-                
-                <div class="comments-section">
-                    <h4>Comentários (${post.comments.length})</h4>
-                    
-                    <div class="comment-form">
-                        <div class="form-group">
-                            <textarea id="commentContent" class="form-textarea" placeholder="Adicione um comentário..." rows="3"></textarea>
-                        </div>
-                        <button class="btn btn-primary" onclick="addComment('${post.id}')">Comentar</button>
-                    </div>
-                    
-                    <div class="post-comments">
-                        ${commentsHtml || '<p style="text-align: center; color: var(--text-secondary); padding: 1rem;">Nenhum comentário ainda</p>'}
-                    </div>
-                </div>
-            `;
-            
-            showModal('postDetailModal');
+                        `).join('') : 
+                        '<p style="text-align: center; color: var(--text-muted); margin-top: 1rem;">Nenhum comentário ainda.</p>'
+                    }
+                `;
+            } else {
+                commentsContainer.style.display = 'none';
+            }
         }
 
         // Adicionar comentário
         function addComment(postId) {
-            const user = state.currentUser;
-            if (!user) {
-                showNotification('Você precisa estar logado para comentar!', 'error');
+            if (!state.currentUser) {
+                showNotification('Faça login para comentar.', 'error');
                 return;
             }
             
-            const content = document.getElementById('commentContent').value.trim();
+            const commentInput = document.getElementById(`comment-${postId}`);
+            const content = commentInput.value.trim();
+            
             if (!content) {
-                showNotification('Digite um comentário!', 'error');
+                showNotification('Digite um comentário.', 'error');
                 return;
             }
             
             const post = state.posts.find(p => p.id === postId);
-            if (!post) return;
+            if (!post.comments) post.comments = [];
             
             const newComment = {
                 id: Date.now().toString(),
-                content: content,
-                author: {
-                    id: user.id,
-                    name: user.name,
-                    avatar: user.avatar,
-                    role: user.role
-                },
-                date: new Date().toISOString(),
+                content,
+                author: state.currentUser.name,
+                authorId: state.currentUser.id,
+                avatar: state.currentUser.avatar,
+                date: new Date(),
                 likes: 0
             };
             
             post.comments.push(newComment);
             saveState();
-            showPostDetail(postId);
+            showComments(postId); // Recarregar comentários
+            commentInput.value = '';
             showNotification('Comentário adicionado!', 'success');
         }
 
-        // Compartilhar post
-        function sharePost(postId) {
-            const post = state.posts.find(p => p.id === postId);
-            if (!post) return;
-            
-            const shareUrl = `${window.location.origin}${window.location.pathname}#post-${postId}`;
-            
-            if (navigator.share) {
-                navigator.share({
-                    title: post.title,
-                    text: post.content.substring(0, 100),
-                    url: shareUrl
-                });
-            } else {
-                navigator.clipboard.writeText(shareUrl);
-                showNotification('Link copiado para a área de transferência!', 'success');
-            }
+        // Sistema de pesquisa de jogadores
+        function initPlayerSearch() {
+            const searchInput = document.getElementById('playerSearch');
+            searchInput.addEventListener('input', function() {
+                const query = this.value.toLowerCase().trim();
+                
+                if (query.length < 2) {
+                    document.getElementById('searchResults').innerHTML = `
+                        <div class="empty-state">
+                            <div class="empty-state-icon">👥</div>
+                            <h4>Pesquise por jogadores</h4>
+                            <p>Digite o nome de um jogador para ver suas fichas técnicas.</p>
+                        </div>
+                    `;
+                    return;
+                }
+                
+                // Filtro simulado - em uma aplicação real, isso viria de uma API
+                const filteredPlayers = [
+                    { id: 1, name: 'Neymar Jr', position: 'Atacante', rating: 89, team: 'Al Hilal', nationality: 'Brasil' },
+                    { id: 2, name: 'Vinicius Jr', position: 'Atacante', rating: 86, team: 'Real Madrid', nationality: 'Brasil' },
+                    { id: 3, name: 'Alisson Becker', position: 'Goleiro', rating: 89, team: 'Liverpool', nationality: 'Brasil' },
+                    { id: 4, name: 'Casemiro', position: 'Meio-campo', rating: 87, team: 'Manchester United', nationality: 'Brasil' },
+                    { id: 5, name: 'Rodrygo', position: 'Atacante', rating: 83, team: 'Real Madrid', nationality: 'Brasil' }
+                ].filter(player => 
+                    player.name.toLowerCase().includes(query) || 
+                    player.team.toLowerCase().includes(query) ||
+                    player.position.toLowerCase().includes(query)
+                );
+                
+                if (filteredPlayers.length > 0) {
+                    document.getElementById('searchResults').innerHTML = `
+                        <h4 style="margin-bottom: 1rem;">Resultados da pesquisa (${filteredPlayers.length})</h4>
+                        ${filteredPlayers.map(player => `
+                            <div class="player-card">
+                                <img src="ef.png" alt="${player.name}" class="player-image">
+                                <div class="player-info">
+                                    <div class="player-name">${player.name}</div>
+                                    <div class="player-details">
+                                        ${player.position} • ${player.team} • ${player.nationality}
+                                    </div>
+                                </div>
+                                <div class="player-rating">${player.rating}</div>
+                            </div>
+                        `).join('')}
+                    `;
+                } else {
+                    document.getElementById('searchResults').innerHTML = `
+                        <div class="empty-state">
+                            <div class="empty-state-icon">🔍</div>
+                            <h4>Nenhum jogador encontrado</h4>
+                            <p>Tente buscar por outro nome ou time.</p>
+                        </div>
+                    `;
+                }
+            });
         }
 
-        // Mostrar notificação
+        // Sistema de temas
+        function toggleTheme() {
+            const currentTheme = document.body.getAttribute('data-theme') || 'dark';
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            
+            document.body.setAttribute('data-theme', newTheme);
+            state.settings.theme = newTheme;
+            saveState();
+            
+            showNotification(`Tema ${newTheme === 'dark' ? 'escuro' : 'claro'} ativado`, 'success');
+        }
+
+        function setTheme(theme) {
+            document.body.setAttribute('data-theme', theme);
+            state.settings.theme = theme;
+            saveState();
+            showNotification(`Tema ${theme === 'dark' ? 'escuro' : theme === 'light' ? 'claro' : 'automático'} ativado`, 'success');
+        }
+
+        // Sistema de notificações
         function showNotification(message, type = 'info') {
             const notification = document.getElementById('notification');
             notification.textContent = message;
-            notification.className = `notification ${type}`;
-            notification.classList.add('show');
+            notification.className = `notification ${type} show`;
             
             setTimeout(() => {
                 notification.classList.remove('show');
             }, 5000);
         }
 
-        // Debounce para pesquisa
-        function debounce(func, wait) {
-            let timeout;
-            return function executedFunction(...args) {
-                const later = () => {
-                    clearTimeout(timeout);
-                    func(...args);
-                };
-                clearTimeout(timeout);
-                timeout = setTimeout(later, wait);
-            };
+        // Sistema de modais
+        function showModal(modalId) {
+            document.getElementById(modalId).style.display = 'flex';
         }
 
-        // Inicializar tema
-        const savedTheme = localStorage.getItem('efootballTheme') || 'dark';
-        changeTheme(savedTheme);
+        function hideModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+        }
+
+        function showLoginModal() {
+            showModal('loginModal');
+        }
+
+        function showRegisterModal() {
+            showModal('registerModal');
+        }
+
+        function showForgotPasswordModal() {
+            hideModal('loginModal');
+            showModal('forgotPasswordModal');
+        }
+
+        function showCreatePostModal() {
+            if (!state.currentUser) {
+                showLoginOverlay();
+                return;
+            }
+            showModal('createPostModal');
+        }
+
+        function showSettingsModal() {
+            showModal('settingsModal');
+        }
+
+        function showProfileModal() {
+            if (!state.currentUser) {
+                showNotification('Faça login para acessar seu perfil.', 'error');
+                return;
+            }
+            
+            // Preencher dados do perfil
+            document.getElementById('profileName').textContent = state.currentUser.name;
+            document.getElementById('profileEmail').textContent = state.currentUser.email;
+            document.getElementById('profileAvatar').src = state.currentUser.avatar || 'ef.png';
+            document.getElementById('profileBio').value = state.currentUser.bio || '';
+            document.getElementById('profileLocation').value = state.currentUser.location || '';
+            
+            // Atualizar badge de role
+            const roleBadge = document.getElementById('profileRole');
+            roleBadge.textContent = state.currentUser.role === 'owner' ? 'Proprietário' : 
+                                   state.currentUser.role === 'admin' ? 'Administrador' : 'Usuário';
+            roleBadge.className = `role-badge role-${state.currentUser.role}`;
+            
+            showModal('profileModal');
+        }
+
+        function showAdminPanel() {
+            if (!state.currentUser || (state.currentUser.role !== 'admin' && state.currentUser.role !== 'owner')) {
+                showNotification('Acesso restrito a administradores.', 'error');
+                return;
+            }
+            
+            // Atualizar estatísticas
+            updateAdminStats();
+            
+            // Personalizar mensagem de boas-vindas
+            const welcomeTitle = document.getElementById('adminWelcomeTitle');
+            const welcomeMessage = document.getElementById('adminWelcomeMessage');
+            
+            if (state.currentUser.role === 'owner') {
+                welcomeTitle.textContent = '👑 Bem-vindo, Proprietário!';
+                welcomeMessage.textContent = 'Você tem acesso total ao sistema de gerenciamento.';
+            } else {
+                welcomeTitle.textContent = '🛡️ Bem-vindo, Administrador!';
+                welcomeMessage.textContent = 'Você tem acesso administrativo ao sistema.';
+            }
+            
+            showModal('adminPanelModal');
+        }
+
+        function showMemberListModal() {
+            if (!state.currentUser || (state.currentUser.role !== 'admin' && state.currentUser.role !== 'owner')) {
+                showNotification('Acesso restrito a administradores.', 'error');
+                return;
+            }
+            
+            const container = document.querySelector('#memberListModal .member-list');
+            container.innerHTML = state.users.map(user => `
+                <div class="member-card ${user.banned ? 'banned-user' : ''}">
+                    <img src="${user.avatar || 'ef.png'}" alt="${user.name}" class="member-avatar">
+                    <div class="member-info">
+                        <div class="member-name">${user.name} ${user.banned ? '<span class="ban-badge">BANIDO</span>' : ''}</div>
+                        <div class="member-email">${user.email}</div>
+                    </div>
+                    <div class="member-role role-${user.role}">
+                        ${user.role === 'owner' ? '👑 Proprietário' : 
+                          user.role === 'admin' ? '🛡️ Admin' : '👤 Usuário'}
+                    </div>
+                    ${state.currentUser.role === 'owner' && user.role !== 'owner' ? `
+                        <button class="btn btn-danger" onclick="banUser('${user.id}')" ${user.banned ? 'disabled' : ''}>
+                            ${user.banned ? 'Banido' : 'Banir'}
+                        </button>
+                    ` : ''}
+                </div>
+            `).join('');
+            
+            showModal('memberListModal');
+        }
+
+        // Sistema de banimento
+        function banUser(userId) {
+            if (!state.currentUser || state.currentUser.role !== 'owner') {
+                showNotification('Apenas o proprietário pode banir usuários.', 'error');
+                return;
+            }
+            
+            const user = state.users.find(u => u.id === userId);
+            if (user && user.role !== 'owner') {
+                user.banned = true;
+                saveState();
+                showMemberListModal(); // Recarregar lista
+                showNotification(`Usuário ${user.name} foi banido.`, 'success');
+            }
+        }
+
+        // Landing pages
+        function showLandingPage(page) {
+            document.getElementById('mainSite').style.display = 'none';
+            document.getElementById('mainFooter').style.display = 'none';
+            document.getElementById(`${page}Page`).classList.add('active');
+        }
+
+        function hideLandingPage() {
+            document.querySelectorAll('.landing-page').forEach(page => {
+                page.classList.remove('active');
+            });
+            document.getElementById('mainSite').style.display = 'block';
+            document.getElementById('mainFooter').style.display = 'block';
+        }
+
+        // Utilitários
+        function formatDate(date) {
+            return new Date(date).toLocaleDateString('pt-BR', {
+                day: '2-digit',
+                month: '2-digit',
+                year: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit'
+            });
+        }
+
+        function saveState() {
+            localStorage.setItem('users', JSON.stringify(state.users));
+            localStorage.setItem('posts', JSON.stringify(state.posts));
+            localStorage.setItem('content', JSON.stringify(state.content));
+            localStorage.setItem('players', JSON.stringify(state.players));
+            localStorage.setItem('settings', JSON.stringify(state.settings));
+            if (state.currentUser) {
+                localStorage.setItem('currentUser', JSON.stringify(state.currentUser));
+            }
+        }
+
+        function toggleDropdown(dropdownId) {
+            const dropdown = document.getElementById(dropdownId);
+            dropdown.classList.toggle('show');
+        }
+
+        function toggleMobileMenu() {
+            document.getElementById('navLinks').classList.toggle('active');
+        }
+
+        function setupEventListeners() {
+            // Fechar dropdowns ao clicar fora
+            document.addEventListener('click', function(event) {
+                if (!event.target.matches('.dropdown button')) {
+                    document.querySelectorAll('.dropdown-content').forEach(dropdown => {
+                        dropdown.classList.remove('show');
+                    });
+                }
+            });
+            
+            // Fechar modais ao clicar fora
+            document.addEventListener('click', function(event) {
+                if (event.target.classList.contains('modal')) {
+                    event.target.style.display = 'none';
+                }
+            });
+        }
+
+        function handleScroll() {
+            const header = document.getElementById('header');
+            const backToTop = document.getElementById('backToTop');
+            
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+                backToTop.classList.add('visible');
+            } else {
+                header.classList.remove('scrolled');
+                backToTop.classList.remove('visible');
+            }
+        }
+
+        function setupBackToTop() {
+            const backToTop = document.getElementById('backToTop');
+            backToTop.addEventListener('click', scrollToTop);
+        }
+
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
+        function showLoginOverlay() {
+            document.getElementById('loginOverlay').style.display = 'flex';
+        }
+
+        function hideLoginOverlay() {
+            document.getElementById('loginOverlay').style.display = 'none';
+        }
+
+        // Funções adicionais para funcionalidades específicas
+        function togglePassword(inputId) {
+            const input = document.getElementById(inputId);
+            input.type = input.type === 'password' ? 'text' : 'password';
+        }
+
+        function checkPasswordStrength(password) {
+            const strengthBar = document.getElementById('passwordStrength');
+            let strength = 0;
+            
+            if (password.length >= 8) strength += 1;
+            if (/[A-Z]/.test(password)) strength += 1;
+            if (/[0-9]/.test(password)) strength += 1;
+            if (/[^A-Za-z0-9]/.test(password)) strength += 1;
+            
+            strengthBar.className = 'password-strength-fill';
+            if (strength <= 1) {
+                strengthBar.classList.add('password-weak');
+            } else if (strength <= 2) {
+                strengthBar.classList.add('password-medium');
+            } else {
+                strengthBar.classList.add('password-strong');
+            }
+        }
+
+        function uploadAvatar(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    document.getElementById('profileAvatar').src = e.target.result;
+                    if (state.currentUser) {
+                        state.currentUser.avatar = e.target.result;
+                        saveState();
+                    }
+                };
+                reader.readAsDataURL(file);
+            }
+        }
+
+        function saveProfile() {
+            if (!state.currentUser) return;
+            
+            state.currentUser.bio = document.getElementById('profileBio').value;
+            state.currentUser.location = document.getElementById('profileLocation').value;
+            
+            saveState();
+            hideModal('profileModal');
+            showNotification('Perfil atualizado com sucesso!', 'success');
+        }
+
+        function deleteAccount() {
+            if (confirm('Tem certeza que deseja excluir sua conta? Esta ação não pode ser desfeita.')) {
+                state.users = state.users.filter(u => u.id !== state.currentUser.id);
+                state.currentUser = null;
+                saveState();
+                updateUI();
+                hideModal('settingsModal');
+                showNotification('Sua conta foi excluída.', 'info');
+            }
+        }
+
+        // Funções de placeholder para funcionalidades futuras
+        function socialLogin(provider) {
+            showNotification(`Login com ${provider} em desenvolvimento`, 'info');
+        }
+
+        function forgotPassword(event) {
+            event.preventDefault();
+            showNotification('Instruções de recuperação enviadas para seu e-mail', 'success');
+            hideModal('forgotPasswordModal');
+        }
+
+        function sharePost(postId, platform) {
+            const post = state.posts.find(p => p.id === postId);
+            if (post) {
+                showNotification(`Compartilhando post no ${platform}...`, 'info');
+            }
+        }
+
+        function likeComment(postId, commentId) {
+            if (!state.currentUser) {
+                showLoginOverlay();
+                return;
+            }
+            
+            const post = state.posts.find(p => p.id === postId);
+            if (post && post.comments) {
+                const comment = post.comments.find(c => c.id === commentId);
+                if (comment) {
+                    if (!comment.likes) comment.likes = 0;
+                    comment.likes++;
+                    saveState();
+                    showComments(postId); // Recarregar comentários
+                }
+            }
+        }
+
+        function deleteComment(postId, commentId) {
+            const post = state.posts.find(p => p.id === postId);
+            if (post && post.comments) {
+                post.comments = post.comments.filter(c => c.id !== commentId);
+                saveState();
+                showComments(postId); // Recarregar comentários
+                showNotification('Comentário excluído', 'success');
+            }
+        }
+
+        function filterPosts(type) {
+            // Remover active de todos os filtros
+            document.querySelectorAll('.filter-tag').forEach(tag => {
+                tag.classList.remove('active');
+            });
+            
+            // Adicionar active ao filtro selecionado
+            event.target.classList.add('active');
+            
+            // Em uma implementação real, aqui filtraríamos os posts
+            showNotification(`Filtrando por: ${type}`, 'info');
+        }
+
+        // Inicializar quando a página carregar
+        window.onload = function() {
+            // Configurar tema salvo
+            if (state.settings.theme) {
+                document.body.setAttribute('data-theme', state.settings.theme);
+            }
+            
+            // Mostrar aba inicial
+            switchTab('home');
+        };
     </script>
 </body>
 </html>
